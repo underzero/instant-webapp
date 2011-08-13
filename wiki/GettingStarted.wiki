@@ -1,4 +1,5 @@
 #summary How to get started with IWA
+#labels Featured
 
 = Quick Start =
 Easiest way to get rolling is to import either one of the Sample Applications (depending on your target platform)
