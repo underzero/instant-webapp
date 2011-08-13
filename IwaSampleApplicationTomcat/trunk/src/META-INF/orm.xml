@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	
+	<package>org.vaadin.appfoundation.authentication.data</package>
+	
+	<entity class="org.vaadin.appfoundation.persistence.data.AbstractPojo" name="AbstractPojo">
+		<attributes>
+			<id name="id">
+				<generated-value strategy="TABLE" />
+			</id>
+		</attributes>
+	</entity>
+	
+	
+</entity-mappings>
