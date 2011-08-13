@@ -3,4 +3,20 @@
 = Quick Start =
 Easiest way to get rolling is to import either one of the Sample Applications (depending on your target platform)
  * IwaSampleApplicationGAE
- * IwaSampleApplicationTomcat
+ * !IwaSampleApplicationTomcat
+
+You can either checkout the code from the [http://code.google.com/p/instant-webapp/source/checkout Subversion repository] or download it from the [http://code.google.com/p/instant-webapp/downloads/list download area]
+
+==Preconditions for Google App Engine==
+ * Install Eclipse (Java EE Version)
+ * Install Google Plugin (Eclipse Helios Update Site: http://dl.google.com/eclipse/plugin/3.6)
+ * Install Vaadin Plugin (Eclipse Update Site: http://vaadin.com/eclipse)
+
+==Preconditions for Apache Tomcat (and Mysql)==
+ * Install Eclipse (Java EE Version)
+ * Install Apache Tomcat 6 (http://tomcat.apache.org/download-60.cgi) 
+ * Install !MySql (http://www.mysql.com/downloads/mysql/5.5.html#downloads) 
+ * Install Vaadin Plugin (Eclipse Update Site: http://vaadin.com/eclipse)
+ * Install Datanucleus Plugin (Eclipse Update Site: http://www.datanucleus.org/downloads/eclipse-update) 
+
+
