@@ -599,10 +599,10 @@
 		</tu>
 		<tu tuid="CopyrightMsg">
 			<tuv lang="en">
-				<seg>Copyright (C) 2011 <a href="http://ood.ch">OOD Ltd. All rights reserved</a> </seg>
+				<seg>Powered by Instant Web App (IWA)</seg>
 			</tuv>
 			<tuv lang="de">
-				<seg>Copyright (C) 2011 <a href="http://ood.ch">OOD Ltd. All rights reserved</a> </seg>
+				<seg>Powered by Instant Web App (IWA)</seg>
 			</tuv>
 		</tu>			
 	</body>
