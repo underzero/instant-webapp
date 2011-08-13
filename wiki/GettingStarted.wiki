@@ -1,0 +1,7 @@
+#summary How to get started with IWA
+
+= Quick Start =
+Easiest way to get rolling is to import either (depending on your target platform) the 
+ * IwaSampleApplicationGAE
+ * or the IwaSampleApplicationTomcat
+
