@@ -20,3 +20,6 @@ You can either checkout the code from the [http://code.google.com/p/instant-weba
  * Install Datanucleus Plugin (Eclipse Update Site: http://www.datanucleus.org/downloads/eclipse-update) 
 
 
+<br/>
+= Detailed Guide =
+Find a more detailed guide on how to setup IWA projects [http://instant-webapp.googlecode.com/svn/wiki/IwaDevelopersGuide.pdf here]
