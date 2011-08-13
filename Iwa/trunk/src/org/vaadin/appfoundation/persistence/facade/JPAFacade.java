@@ -1,3 +1,16 @@
+/*  
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
 package org.vaadin.appfoundation.persistence.facade;
 
 import java.io.Serializable;
@@ -23,7 +36,11 @@ import org.vaadin.appfoundation.persistence.data.AbstractPojo;
  * are to connect to the database and manage the objects which are stored to or
  * deleted/fetched from the database.
  * 
+ * This class is initially provided by http://code.google.com/p/vaadin-appfoundation/
+ * and has been modified to use with http://code.google.com/p/instant-webapp/ 
+ * 
  * @author Kim
+ * @author Mischa
  * 
  */
 public class JPAFacade implements IFacade, Serializable {
@@ -72,12 +89,7 @@ public class JPAFacade implements IFacade, Serializable {
     public <A extends AbstractPojo> A find(Class<A> clazz, String id) {
         // Get the EntityManager and use its find() method to fetch the object.
         EntityManager em = getEntityManager();
-        try {
-            return em.find(clazz, id);
-        } finally {
-            // Once we've done the query, close the EntityManager
-            //em.close();
-        }
+        return em.find(clazz, id);
     }
 
     /**
@@ -86,23 +98,18 @@ public class JPAFacade implements IFacade, Serializable {
     @SuppressWarnings("unchecked")
     public <A extends AbstractPojo> List<A> list(Class<A> clazz) {
         EntityManager em = getEntityManager();
-        try {
-            // Initialize the query
-            Query query = generateQuery(clazz, em);
-            
-            // Execute the query
-            List<A> result = query.getResultList();
-            
-            // This is to force loading of the data (in GAE) 
-            result.size();
-            
-            // return the result
-            return result;
-            
-        } finally {
-            // Once we've done the query, close the EntityManager
-            //em.close();
-        }
+        
+        // Initialize the query
+        Query query = generateQuery(clazz, em);
+        
+        // Execute the query
+        List<A> result = query.getResultList();
+        
+        // This is to force loading of the data (in GAE) 
+        result.size();
+        
+        // return the result
+        return result;            
     }
 
     /**
@@ -115,10 +122,8 @@ public class JPAFacade implements IFacade, Serializable {
      * @return An instance of the Query object for the given entity class
      */
     private <A extends AbstractPojo> Query generateQuery(Class<A> entityClass, 
-    		EntityManager em) {
-    	
-    	Query query = em.createQuery("SELECT e FROM " + entityClass.getSimpleName() + " e");
-    	 
+    		EntityManager em) {    	
+    	Query query = em.createQuery("SELECT e FROM " + entityClass.getSimpleName() + " e");    	 
     	return query;
     }
 
@@ -129,23 +134,18 @@ public class JPAFacade implements IFacade, Serializable {
     public <A extends AbstractPojo> List<A> list(String queryStr,
             Map<String, Object> parameters) {
         EntityManager em = getEntityManager();
-        try {
-            // Generate a query instance for the given query and parameters
-            Query query = generateQuery(queryStr, parameters, em);
-            
-            // Execute the query
-            List<A> result = query.getResultList();
-            
-            // This is to force loading of the data (in GAE) 
-            result.size();
-            
-            // return the result
-            return result;
-            
-        } finally {
-            // Once we've done the query, close the EntityManager        	 
-            //em.close();
-        }
+
+        // Generate a query instance for the given query and parameters
+        Query query = generateQuery(queryStr, parameters, em);
+        
+        // Execute the query
+        List<A> result = query.getResultList();
+        
+        // This is to force loading of the data (in GAE) 
+        result.size();
+        
+        // return the result
+        return result;        
     }
 
     /**
@@ -193,16 +193,12 @@ public class JPAFacade implements IFacade, Serializable {
                     query.setParameter(entry.getKey(), entry.getValue());
                 }
             }
-
             // Execute query and return result
             return (A) query.getSingleResult();
         } catch (NoResultException e) {
             // This exception will occur if no results were found with the given
             // query. If this occurs, return null.
             return null;
-        } finally {
-            // Once we've done the query, close the EntityManager
-            //em.close();
         }
     }
 
@@ -238,12 +234,8 @@ public class JPAFacade implements IFacade, Serializable {
             refresh(pojo);
         } catch (Exception e) {
         	em.getTransaction().rollback();
-        	em.close();        
-        
-        } finally {
-            // Once we've done the query, close the EntityManager
-            //em.close();
-        }
+        	em.close();                
+        } 
     }
 
     /**
@@ -253,28 +245,25 @@ public class JPAFacade implements IFacade, Serializable {
         // This method follows the same principles as the store() method. Read
         // store()'s comments for more detailed explanations.
         EntityManager em = getEntityManager();
-        try {
-            em.getTransaction().begin();
-            // Loop through all entities
-            for (AbstractPojo pojo : pojos) {
-                // Merge or persist the objects depending on if they already
-                // exist in the database.
-                if (pojo.getId() != null) {
-                    em.merge(pojo);
-                } else {
-                    em.persist(pojo);
-                }
+        
+        em.getTransaction().begin();
+        // Loop through all entities
+        for (AbstractPojo pojo : pojos) {
+            // Merge or persist the objects depending on if they already
+            // exist in the database.
+            if (pojo.getId() != null) {
+                em.merge(pojo);
+            } else {
+                em.persist(pojo);
             }
-            // Commit the transaction.
-            em.getTransaction().commit();
-
-            // Refresh all the pojos.
-            for (AbstractPojo pojo : pojos) {
-                refresh(pojo);
-            }
-        } finally {
-            em.close();
         }
+        // Commit the transaction.
+        em.getTransaction().commit();
+
+        // Refresh all the pojos.
+        for (AbstractPojo pojo : pojos) {
+            refresh(pojo);
+        }    
     }
 
     /**
@@ -333,8 +322,7 @@ public class JPAFacade implements IFacade, Serializable {
                     em.remove(entity);
                     em.getTransaction().commit();
                 }
-            }
-            
+            }            
         } catch( Exception e) {
         	e.printStackTrace();
         	
@@ -354,7 +342,6 @@ public class JPAFacade implements IFacade, Serializable {
             // create a new em if we didn't have a usable one available.
             em.set(emf.createEntityManager());
         }
-
         return em.get();
     }
 
@@ -540,24 +527,19 @@ public class JPAFacade implements IFacade, Serializable {
     public <A extends AbstractPojo> List<A> list(Class<A> clazz,
             int startIndex, int amount) {
         EntityManager em = getEntityManager();
-        try {
-            // Initialize the query
-            Query query = generateQuery(clazz, em);
-            query.setFirstResult(startIndex).setMaxResults(amount);
-                        
-            // Execute the query
-            List<A> result = query.getResultList();
-            
-            // This is to force loading of the data (in GAE) 
-            result.size();
-            
-            // return the result
-            return result;
-                        
-        } finally {
-            // Once we've done the query, close the EntityManager
-            //em.close();
-        }
+        
+        // Initialize the query
+        Query query = generateQuery(clazz, em);
+        query.setFirstResult(startIndex).setMaxResults(amount);
+                    
+        // Execute the query
+        List<A> result = query.getResultList();
+        
+        // This is to force loading of the data (in GAE) 
+        result.size();
+        
+        // return the result
+        return result;                               
     }
 
     /**
@@ -567,25 +549,21 @@ public class JPAFacade implements IFacade, Serializable {
     public <A extends AbstractPojo> List<A> list(String queryStr,
             Map<String, Object> parameters, int startIndex, int amount) {
         EntityManager em = getEntityManager();
-        try {
-            // Generate a query instance for the given query and parameters
-            Query query = generateQuery(queryStr, parameters, em);
 
-            // Set the result limit parameters
-            query.setFirstResult(startIndex).setMaxResults(amount);
+        // Generate a query instance for the given query and parameters
+        Query query = generateQuery(queryStr, parameters, em);
 
-            // Execute the query
-            List<A> result = query.getResultList();
-            
-            // This is to force loading of the data (in GAE) 
-            result.size();
-            
-            // return the result
-            return result;
-        } finally {
-            // Once we've done the query, close the EntityManager
-            //em.close();
-        }
+        // Set the result limit parameters
+        query.setFirstResult(startIndex).setMaxResults(amount);
+
+        // Execute the query
+        List<A> result = query.getResultList();
+        
+        // This is to force loading of the data (in GAE) 
+        result.size();
+        
+        // return the result
+        return result;
     }
 
     /**
