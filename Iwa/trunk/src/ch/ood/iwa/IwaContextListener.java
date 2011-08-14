@@ -54,7 +54,7 @@ public class IwaContextListener implements ServletContextListener {
 	
 	@Override
 	public void contextDestroyed(ServletContextEvent arg0) {
-		// TODO Nothing to do
+		FacadeFactory.clear();
 		
 	}
 }
