@@ -115,17 +115,17 @@ public class IwaSampleView extends AbstractModuleView<VerticalLayout, IwaSampleP
 ==Full Screen View==
 If a view should not be visually embedded in the main view with the header and navigation frame, you can simply define
 {{{
-  @Override
-  public boolean isFullScreen() {
+@Override
+public boolean isFullScreen() {
 	return true;
-  }
+}
 }}}
 in your view and register it in your application 
 {{{
-  @Override
-  protected void initializeFullScreenViews() {
+@Override
+protected void initializeFullScreenViews() {
 	registerFullScreenView(IwaSampleFullScreenView.class, FULL_SCREEN_VIEW_URL);
-  }
+}
 }}}
 in your view.
 
