@@ -51,10 +51,13 @@ public class IwaMailSender implements Serializable {
 				.getProperty(SENDER_NAME_KEY);
 
 		Message msg = new MimeMessage(session);
+		IwaApplication.getInstance().log(null, null, " *** Sending Mail from " + senderName + "(" + senderMail + ")");
+		IwaApplication.getInstance().log(null, null, " *** Sending Mail to " + receiverName + "(" + receiverEmail + ")");
 		msg.setFrom(new InternetAddress(senderMail, senderName));
 		msg.addRecipient(Message.RecipientType.TO, new InternetAddress(receiverEmail, receiverName));
 		msg.setSubject(subject);
 		msg.setText(content);
+		
 		Transport.send(msg);
 	}
 
