@@ -2,17 +2,17 @@
 
 = Introduction =
 
-A module groups different views and their corresponding presenters
+A module groups different views and their corresponding presenters.
 
 
 =Overview = 
 
 http://instant-webapp.googlecode.com/svn/wiki/ModuleConcept.png
 
-The green boxes are the ones implemented by the application, the orange ones are provided by IWA
+The green boxes are the ones implemented by the application (you), the orange ones are provided by IWA
 
 
-= Details =
+=Modules=
 
 To implement a new module, simply subclass !AbstractModule:
 
@@ -34,5 +34,80 @@ public class IwaSampleModule extends AbstractModule implements Serializable {
 	public ThemeResource getIcon() {
 		return icon;
 	}	
+}
+}}}
+
+A module can have multiple Views that are registered in the Modules Constructor.
+
+=Presenters and Views =
+The design follows the [http://en.wikipedia.org/wiki/Model-view-presenter Model-View-Presenter] ideas.
+
+==Views==
+Implementing a view is only a matter of a few lines code:
+{{{
+public class IwaSampleView extends AbstractModuleView<VerticalLayout, IwaSamplePresenter, IwaSamplePresenter.UI> implements IwaSamplePresenter.UI, Serializable {
+
+	private static final long serialVersionUID = 1L;
+	private Button btnHello;		
+	
+	public IwaSampleView() {		
+		super(new VerticalLayout(), new IwaSamplePresenter());
+		getPresenter().setUi(this);
+		setName("Template");
+		initLayout();
+		getPresenter().initListeners(); 		
+	}
+		
+	private void initLayout() {
+		btnHello = new Button("Say Hello");
+		getContent().addComponent(btnHello);					
+	}
+	
+	@Override
+	public boolean isFullScreen() {
+		return false;
+	}
+
+	@Override
+	public Button getHelloButton() {
+		return btnHello;
+	}
+}
+}}}
+
+==Presenters==
+A Presenter implementation:
+{{{
+public class IwaSamplePresenter extends AbstractModulePresenter<IwaSamplePresenter.UI> implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Interface for communication between Presenter and View
+	 */
+	public static interface UI extends IwaModuleUI {		
+		Button getHelloButton();
+	}
+	
+	/**
+	 * Do the event wiring 
+	 */
+	public void initListeners() {		
+		getUi().getHelloButton().addListener(buttonClickListener);
+	}
+	
+	/**
+	 * Button Click Listener
+	 */
+	private ClickListener buttonClickListener = new ClickListener() {
+		private static final long serialVersionUID = 1L;
+
+		@Override
+		public void buttonClick(ClickEvent event) {
+			if (event.getButton().equals(getUi().getHelloButton())) {
+				getUi().showInfo("Hello", "Hello, World!");
+			} 		
+		}
+	};	
 }
 }}}
