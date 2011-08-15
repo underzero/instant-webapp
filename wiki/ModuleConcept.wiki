@@ -17,7 +17,7 @@ The green boxes are the ones implemented by the application (you), the orange on
 
 =Modules=
 
-To implement a new module, simply subclass !AbstractModule (note that you can either [http://code.google.com/p/instant-webapp/source/browse/#svn%2FIwaSampleApplicationGAE%2Ftrunk%2Fsrc%2Fch%2Food%2Fiwa%2Fsample checkout] or [http://code.google.com/p/instant-webapp/downloads/list download] the sample applications for Google App Engine or Apache Tomcat):
+To implement a new module, simply subclass !AbstractModule (note that you can either [http://code.google.com/p/instant-webapp/source/browse/#svn%2FIwaSampleApplicationGAE%2Ftrunk%2Fsrc%2Fch%2Food%2Fiwa%2Fsample checkout] or [http://code.google.com/p/instant-webapp/downloads/list download] the complete sample application projects for Google App Engine or Apache Tomcat):
 
 {{{
 public class IwaSampleModule extends AbstractModule implements Serializable {
