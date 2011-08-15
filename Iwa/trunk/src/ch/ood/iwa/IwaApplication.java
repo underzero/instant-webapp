@@ -39,20 +39,26 @@ import com.vaadin.terminal.gwt.server.HttpServletRequestListener;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Window.Notification;
 
+/**
+ * This is the IWA Application
+ * 
+ * @author Mischa
+ *
+ */
 public abstract class IwaApplication extends Application 
 									 implements ParameterHandler, HttpServletRequestListener {
 	
-	private static final long serialVersionUID = 1L;	
-	private final static Logger logger = Logger.getLogger(IwaApplication.class.getName());
-	private static final String PROPERTIES_FILE_PATH = "/WEB-INF/iwa.properties";	
-	private static final Properties properties = new Properties();	
-	private static ThreadLocal<IwaApplication> threadLocal = new ThreadLocal<IwaApplication>();
+	private static final long serialVersionUID = 1L;
+	private static final String PROPERTIES_FILE_PATH = "/WEB-INF/iwa.properties";
+	private static final String COOKIE_NAME_IWA_LOCALE = "IWA.LOCALE";
+	private static final String CMD_LINE_PARAMETER_LANG = "lang";
+	private static final Logger logger = Logger.getLogger(IwaApplication.class.getName());
+	private static ThreadLocal<IwaApplication> threadLocal = new ThreadLocal<IwaApplication>();		
+	private Properties properties = new Properties();		
 	private ModuleRegistry moduleRegistry = new ModuleRegistry();
 	private String theme = "iwa";
 	private Locale locale;
-	private static final String COOKIE_NAME_IWA_LOCALE = "IWA.LOCALE";
-	private static final String CMD_LINE_PARAMETER_LANG = "lang";
-	private transient HttpServletResponse response;
+	private transient HttpServletResponse response;	
 	protected final String ROOT_USER_ROLE = "Administrator";
 	
 	public final static String LOGO_FILE_PATH = "../iwa/img/logo.png";	
@@ -87,7 +93,11 @@ public abstract class IwaApplication extends Application
 	}
 	
 	public Properties getProperties() {
-		return properties;
+		return getInstance().properties;
+	}
+	
+	public void logError(Throwable t) {		
+		logger.severe(getStackTrace(t));
 	}
 	
 	/**
@@ -222,7 +232,7 @@ public abstract class IwaApplication extends Application
 	private void loadProperties() {	
 		try {			
 			FileInputStream fileInputStream = new FileInputStream(getContext().getBaseDirectory().getPath() + PROPERTIES_FILE_PATH);
-			properties.load(fileInputStream);
+			getInstance().getProperties().load(fileInputStream);
 		} catch (Exception e) {
 			logger.severe(e.getMessage());
 		}		
@@ -279,7 +289,7 @@ public abstract class IwaApplication extends Application
 				new ModulePermissionManager().addPermission(ROOT_USER_ROLE, new AdministrationModule());
 				new ModulePermissionManager().addPermission(ROOT_USER_ROLE, new ApplicationModule());				
 			} catch (Exception e) {
-				e.printStackTrace();
+				logError(e);
 			}
 		}
 	}
