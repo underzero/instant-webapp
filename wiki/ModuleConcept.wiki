@@ -1,5 +1,7 @@
 #summary Explains what a module is
 
+<wiki:toc max_depth="3" />
+
 = Introduction =
 
 A module groups different views and their corresponding presenters.
