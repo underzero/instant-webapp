@@ -1,0 +1,17 @@
+#summary Explains what a module is
+
+= Introduction =
+
+A module groups different views and their corresponding presenters
+
+
+=Overview = 
+
+http://instant-webapp.googlecode.com/svn/wiki/ModuleConcept.png
+
+The green boxes are the ones implemented by the application, the orange ones are provided by IWA
+
+
+= Details =
+
+To implement a new module, simply subclass AbstractModule, as in IwaSampleModule
