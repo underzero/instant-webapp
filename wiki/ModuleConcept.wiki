@@ -112,6 +112,38 @@ public class IwaSampleView extends AbstractModuleView<VerticalLayout, IwaSampleP
 }
 }}}
 
+==Full Screen View==
+If a view should not be visually embedded in the main view with the header and navigation frame, you can simply define
+{{{
+  @Override
+  public boolean isFullScreen() {
+	return true;
+  }
+}}}
+in your view and register it in your application 
+{{{
+  @Override
+  protected void initializeFullScreenViews() {
+	registerFullScreenView(IwaSampleFullScreenView.class, FULL_SCREEN_VIEW_URL);
+  }
+}}}
+in your view.
+
+You can then navigate via hash and the URL you have given to the view, for example http://localhost:7777#FullScreenSampleView.
+
+Please note that this works on some browser rather instable, so you might also want to make the view reachable by http parameter. For this, simply write in yout application something like this:
+{{{
+@Override
+	protected void handleParametersByApplication(Map<String, String[]> parameters) {
+		if (parameters.containsKey(FULL_SCREEN_VIEW_URL)) {
+			ViewHandler.activateView(IwaSampleFullScreenView.class);
+		} else if (parameters.containsKey(LOGIN_VIEW_URL)) {
+			ViewHandler.activateView(LoginView.class);
+		}			
+	}
+}}}
+
+
 ==Presenters==
 A Presenter implementation:
 {{{
