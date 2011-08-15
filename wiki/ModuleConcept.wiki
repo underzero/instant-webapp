@@ -14,4 +14,25 @@ The green boxes are the ones implemented by the application, the orange ones are
 
 = Details =
 
-To implement a new module, simply subclass AbstractModule, as in IwaSampleModule
+To implement a new module, simply subclass !AbstractModule:
+
+{{{
+public class IwaSampleModule extends AbstractModule implements Serializable {
+		
+	private static final long serialVersionUID = 1L;
+	
+	private static final ThemeResource icon = new ThemeResource("../runo/icons/16/note.png");
+	
+	public IwaSampleModule()  {
+		super("Sample");
+		
+		// This is the place to add more views	
+		super.registerView(new IwaSampleView());		
+	}
+
+	@Override
+	public ThemeResource getIcon() {
+		return icon;
+	}	
+}
+}}}
