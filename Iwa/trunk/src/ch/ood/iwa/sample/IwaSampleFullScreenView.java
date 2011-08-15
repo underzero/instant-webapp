@@ -8,19 +8,20 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.VerticalLayout;
 
 /**
- * Template View as a starting point for your IWA view
- * 
+ * Demonstrates how to implement a "full screen" (i.e. no header
+ * or navigation panels).
+ *  
  * @author Mischa
  *
  */
-public class IwaSampleView 
+public class IwaSampleFullScreenView 
 				extends AbstractModuleView<VerticalLayout, IwaSamplePresenter, IwaSamplePresenter.UI>
 				implements IwaSamplePresenter.UI, Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Button btnHello;		
 	
-	public IwaSampleView() {		
+	public IwaSampleFullScreenView() {		
 		super(new VerticalLayout(), new IwaSamplePresenter());
 		getPresenter().setUi(this);
 		setName("Template");
@@ -35,7 +36,7 @@ public class IwaSampleView
 	
 	@Override
 	public boolean isFullScreen() {
-		return false;
+		return true;
 	}
 
 	@Override

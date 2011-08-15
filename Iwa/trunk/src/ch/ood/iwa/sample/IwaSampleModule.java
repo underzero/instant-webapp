@@ -6,7 +6,13 @@ import ch.ood.iwa.module.AbstractModule;
 
 import com.vaadin.terminal.ThemeResource;
 
-
+/**
+ * A Sample module for the IWA framework as a 
+ * starting point for your own IWA application.
+ * 
+ * @author Mischa
+ *
+ */
 public class IwaSampleModule extends AbstractModule implements Serializable {
 		
 	private static final long serialVersionUID = 1L;
@@ -17,7 +23,7 @@ public class IwaSampleModule extends AbstractModule implements Serializable {
 		super("Sample");
 		
 		// This is the place to add more views	
-		super.registerView(new IwaSampleView());		
+		super.registerView(new IwaSampleView());	
 	}
 
 	@Override
