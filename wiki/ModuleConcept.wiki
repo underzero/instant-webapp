@@ -17,7 +17,7 @@ The green boxes are the ones implemented by the application (you), the orange on
 
 =Modules=
 
-To implement a new module, simply subclass !AbstractModule:
+To implement a new module, simply subclass !AbstractModule (note that you can either [http://code.google.com/p/instant-webapp/source/browse/#svn%2FIwaSampleApplicationGAE%2Ftrunk%2Fsrc%2Fch%2Food%2Fiwa%2Fsample checkout] or [http://code.google.com/p/instant-webapp/downloads/list download] the sample applications for Google App Engine or Apache Tomcat):
 
 {{{
 public class IwaSampleModule extends AbstractModule implements Serializable {
@@ -47,28 +47,32 @@ The module is then registered in your application class:
 {{{
 public class IwaSampleApplication extends IwaApplication {
 
-        private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
+	private static final String FULL_SCREEN_VIEW_URL = "FullScreenSampleView";
+	private static final String LOGIN_VIEW_URL = "LoginView";
 
-        @Override
-        protected void handleParametersByApplication(Map<String, String[]> arg0) {
-                                
-        }
+	@Override
+	protected void handleParametersByApplication(Map<String, String[]> parameters) {
+		if (parameters.containsKey(FULL_SCREEN_VIEW_URL)) {
+			ViewHandler.activateView(IwaSampleFullScreenView.class);
+		} else if (parameters.containsKey(LOGIN_VIEW_URL)) {
+			ViewHandler.activateView(LoginView.class);
+		}			
+	}
 
-        @Override
-        protected void initApplication() {
-                
-        }
+	@Override
+	protected void initApplication() {}
 
-        @Override
-        protected void initializeFullScreenViews() {
-                                
-        }
+	@Override
+	protected void initializeFullScreenViews() {
+		registerFullScreenView(IwaSampleFullScreenView.class, FULL_SCREEN_VIEW_URL);
+	}
 
-        @Override
-        protected void initializeModulesByApplication() {
-                new ModulePermissionManager().addPermission(ROOT_USER_ROLE, new IwaSampleModule());     
-                getModuleRegistry().registerModule(new IwaSampleModule());                              
-        }
+	@Override
+	protected void initializeModulesByApplication() {
+		new ModulePermissionManager().addPermission(ROOT_USER_ROLE, new IwaSampleModule());	
+		getModuleRegistry().registerModule(new IwaSampleModule());				
+	}
 }
 }}}
 
