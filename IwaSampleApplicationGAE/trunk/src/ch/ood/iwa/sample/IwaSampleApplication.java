@@ -10,7 +10,8 @@ import ch.ood.iwa.module.ui.LoginView;
 
 /**
  * Sample Application to demonstrate the usage of 
- * Instant Web App Framework IWA
+ * Instant Web App Framework IWA or as a starting point for your own
+ * IWA application.
  *  
  * @author Mischa
  *

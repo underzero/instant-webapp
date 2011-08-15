@@ -7,6 +7,12 @@ import ch.ood.iwa.module.ui.AbstractModuleView;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.VerticalLayout;
 
+/**
+ * Template View as a starting point for your IWA view
+ * 
+ * @author Mischa
+ *
+ */
 public class IwaSampleView 
 				extends AbstractModuleView<VerticalLayout, IwaSamplePresenter, IwaSamplePresenter.UI>
 				implements IwaSamplePresenter.UI, Serializable {
