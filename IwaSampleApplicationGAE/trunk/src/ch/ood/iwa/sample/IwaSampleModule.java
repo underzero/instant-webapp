@@ -17,7 +17,7 @@ public class IwaSampleModule extends AbstractModule implements Serializable {
 		super("Sample");
 		
 		// This is the place to add more views	
-		super.registerView(new IwaSampleView());		
+		super.registerView(new IwaSampleView());	
 	}
 
 	@Override
