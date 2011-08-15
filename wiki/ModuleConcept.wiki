@@ -140,7 +140,7 @@ protected void handleParametersByApplication(Map<String, String[]> parameters) {
 	} else if (parameters.containsKey(LOGIN_VIEW_URL)) {
 		ViewHandler.activateView(LoginView.class);
 	}			
-}	}
+}
 }}}
 
 
