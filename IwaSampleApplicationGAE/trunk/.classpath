@@ -11,7 +11,10 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/confirmdialog-1.1.1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/iwa.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/vaadin-6.6.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/xom-1.2.6.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
