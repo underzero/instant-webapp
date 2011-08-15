@@ -10,7 +10,7 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 
 /**
- * Template Presenter as a Start for your Implementation
+ * Template Presenter as a start for your implementation
  * 
  * @author Mischa
  *
