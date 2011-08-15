@@ -2,7 +2,7 @@
 #labels Featured
 
 = Quick Start =
-Easiest way to get rolling is to import either one of the Sample Applications (depending on your target platform)
+Easiest way to get rolling is to import either one of the Sample Applications Eclipse projects (depending on your target platform)
  * IwaSampleApplicationGAE
  * !IwaSampleApplicationTomcat
 
@@ -26,3 +26,6 @@ Once the application is running, you can log in using the user "r" with the pass
 <br/>
 = Detailed Guide =
 Find a more detailed guide on how to setup IWA projects [http://instant-webapp.googlecode.com/svn/wiki/IwaDevelopersGuide.pdf here]
+
+= Appfoundation Doumentation=
+As IWA is based on [http://code.google.com/p/vaadin-appfoundation/w/list appfoundation, you might want also to consult the according documentation.
