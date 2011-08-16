@@ -77,12 +77,14 @@ public class IwaSampleApplication extends IwaApplication {
 }}}
 
 =Presenters and Views =
-The design follows the [http://en.wikipedia.org/wiki/Model-view-presenter Model-View-Presenter] ideas.
+The design follows the [http://en.wikipedia.org/wiki/Model-view-presenter Model-View-Presenter] ideas where possible.
 
 ==Views==
 Implementing a view is only a matter of a few lines code:
 {{{
-public class IwaSampleView extends AbstractModuleView<VerticalLayout, IwaSamplePresenter, IwaSamplePresenter.UI> implements IwaSamplePresenter.UI, Serializable {
+public class IwaSampleView 
+                 extends AbstractModuleView<VerticalLayout, IwaSamplePresenter, IwaSamplePresenter.UI> 
+                 implements IwaSamplePresenter.UI, Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Button btnHello;		
