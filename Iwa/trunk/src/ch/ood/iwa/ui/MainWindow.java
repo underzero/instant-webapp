@@ -40,7 +40,6 @@ import com.vaadin.ui.themes.BaseTheme;
 public class MainWindow extends Window implements ViewContainer, ItemClickListener, Button.ClickListener {
 
 	private static final long serialVersionUID = 1L;	
-
 	private Label lblCurrentUser = new Label("Logged off...");
 	private Button btnLogout;	
 	private Panel fullScreenLayout = new Panel();
@@ -50,6 +49,9 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
 	private Accordion menu  = new Accordion();	
 	private View currentView;
 
+	/**
+	 * Default Constructor
+	 */
 	public MainWindow() {
 		initLayout();
 	}
@@ -108,19 +110,28 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
 	}
 
 	/**
-	 * This is the logoz button
+	 * This is the logout button
 	 */
 	@Override
 	public void buttonClick(ClickEvent event) {
 		SessionHandler.logout();
 		ViewHandler.activateView(LoginView.class);
-		
 	}
 	
+	/**
+	 * Set the current user to display it in the header panel
+	 * 
+	 * @param currentUser
+	 */
 	public void setCurrentUser(String currentUser) {
 		lblCurrentUser.setValue(Lang.getMessage("LoggedInAs", currentUser));
 	}
 		
+	/**
+	 * Produces the header panel
+	 * 
+	 * @return
+	 */
 	private Panel getHeaderPanel() {
         Panel panel = new Panel(new HorizontalLayout());
         panel.setHeight("130px"); 

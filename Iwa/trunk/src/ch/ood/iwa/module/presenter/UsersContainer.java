@@ -17,12 +17,13 @@ import com.vaadin.data.util.BeanItemContainer;
 public class UsersContainer extends BeanItemContainer<User> implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-    
 	private static final Object[] VISIBLE_COLUMNS = new Object[] {
     		"username", "name", "email", "role" };
-    
     private static final String[] COL_HEADERS = new String[] {"Username", "Name", "Email", "Role"};
 	
+    /**
+     * Default constructor
+     */
 	public UsersContainer() {
 		super(User.class);		
 	}

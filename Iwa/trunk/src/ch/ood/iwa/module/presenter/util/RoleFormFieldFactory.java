@@ -13,9 +13,10 @@ import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.DefaultFieldFactory;
 import com.vaadin.ui.Field;
+import com.vaadin.ui.FormFieldFactory;
 
 /**
- * FormFieldFactory for the Roles Form
+ * A specialized {@link FormFieldFactory} for the Roles Form
  * 
  * @author Mischa
  *
@@ -23,13 +24,10 @@ import com.vaadin.ui.Field;
 public class RoleFormFieldFactory extends DefaultFieldFactory implements Serializable {
 	
 	private static final long serialVersionUID = 1L;	
-	
 	private static String[] visibleFields = {
 		"identifier",				
 	};
-	
 	private AbstractSelect.NewItemHandler newItemHandler;
-	
 	private ComboBox comboBox;	
 	
 	public RoleFormFieldFactory (AbstractSelect.NewItemHandler newItemHandler) {

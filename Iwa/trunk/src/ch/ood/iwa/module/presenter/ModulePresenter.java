@@ -11,6 +11,11 @@ import java.io.Serializable;
  */
 public interface ModulePresenter<U> extends Serializable {
 	
+	/**
+	 * Sets the View for the presenter
+	 * 
+	 * @param ui
+	 */
 	void setUi(U ui);
 	
 }

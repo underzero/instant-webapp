@@ -35,7 +35,8 @@ public class UsersPresenter extends AbstractModulePresenter<UsersPresenter.UI> i
 	private UsersContainer usersContainer;
 	
 	/**
-	 * Interface for communication between Presenter and View
+	 * This is the interface that decouples Presenter and View
+	 * 
 	 */
 	public static interface UI extends IwaModuleUI {		
 		Table getTable();

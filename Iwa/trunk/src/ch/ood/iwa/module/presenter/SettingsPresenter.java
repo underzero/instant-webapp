@@ -23,10 +23,12 @@ public class SettingsPresenter extends AbstractModulePresenter<SettingsPresenter
 							   implements ClickListener, Serializable {
 	
 	private static final long serialVersionUID = 1L;
-	
-	// The model classes
 	private PasswordBackingBean passwordBean = new PasswordBackingBean();
 
+	/**
+	 * This is the interface that decouples Presenter and View
+	 * 
+	 */
 	public static interface UI extends IwaModuleUI {
 		Form getChangePasswordForm();
 	}

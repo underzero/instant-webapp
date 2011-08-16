@@ -40,6 +40,10 @@ public class LoginPresenter extends AbstractModulePresenter<LoginPresenter.UI> i
 	private static final long serialVersionUID = 1L;
 	private static final String IWA_LANGS_KEY = "iwa.languages";
 	
+	/**
+	 * This is the interface that decouples Presenter and View
+	 * 
+	 */
 	public static interface UI extends IwaModuleUI {
 		String getUsername();
 		String getPassword();

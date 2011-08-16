@@ -18,10 +18,9 @@ import com.vaadin.data.util.BeanItemContainer;
 public class PermissionsContainer extends BeanItemContainer<ModulePermission> implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-    
 	private static final Object[] VISIBLE_COLUMNS = new Object[] {
-    		"roleName", "moduleName"};
-    
+    		"roleName", 
+    		"moduleName"};
     private static final String[] COL_HEADERS = new String[] {"Role", "Module"};
 	
 	public PermissionsContainer() {

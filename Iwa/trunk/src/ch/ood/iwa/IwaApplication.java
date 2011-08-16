@@ -52,6 +52,7 @@ public abstract class IwaApplication extends Application
 	private static final String PROPERTIES_FILE_PATH = "/WEB-INF/iwa.properties";
 	private static final String COOKIE_NAME_IWA_LOCALE = "IWA.LOCALE";
 	private static final String CMD_LINE_PARAMETER_LANG = "lang";
+	public static String LOGIN_URI = "Login";
 	private static final Logger logger = Logger.getLogger(IwaApplication.class.getName());
 	private static ThreadLocal<IwaApplication> threadLocal = new ThreadLocal<IwaApplication>();		
 	private Properties properties = new Properties();		
@@ -92,14 +93,68 @@ public abstract class IwaApplication extends Application
 		initApplication();		
 	}
 	
+	/**
+	 * Useful for retrieving the properties from 
+	 * the iwa.properties file 
+	 * 
+	 * @return
+	 */
 	public Properties getProperties() {
 		return getInstance().properties;
 	}
 	
+	/**
+	 * Logs the stacktrace of a throwable with {@link Level#SEVERE} 
+	 * 
+	 * @param t
+	 */
 	public void logError(Throwable t) {		
 		logger.severe(getStackTrace(t));
 	}
 	
+	/**
+	 * To be called when the Locale (language) changes
+	 * 
+	 * @param newLocale
+	 */
+	public void changeLocale(Locale newLocale) {
+		this.locale = newLocale;
+		super.setLocale(newLocale);
+		Lang.initialize(getInstance());
+		Lang.setLocale(newLocale);
+		ViewHandler.clear();
+		getModuleRegistry().clear();
+		initializeModules();
+		initializeFullScreenViews();
+		registerFullScreenView(LoginView.class, LOGIN_URI);
+		((MainWindow)getMainWindow()).refresh();
+		writeLocalToCookie(newLocale);
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void handleParameters(Map<String, String[]> parameters) {
+		// Language Handling
+		if (parameters.containsKey(CMD_LINE_PARAMETER_LANG)) {
+			String value = parameters.get(CMD_LINE_PARAMETER_LANG)[0];
+			
+			if (value != null && (value.length() == 2)) {
+				Locale newLocale = new Locale(value);
+				changeLocale(newLocale);
+			}
+		}	
+		
+		// Show the Login Screen if requested
+		if (parameters.containsKey(LOGIN_URI)) {
+			ViewHandler.activateView(LoginView.class);
+		}
+		
+		// enable the application to further process parameters
+		handleParametersByApplication(parameters);
+	}	
+		
 	/**
 	 * Convenience method for logging messages.<br/>
 	 * If you have problems finding your messages, make shure your <a href="http://download.oracle.com/javase/7/docs/technotes/guides/logging/overview.html">
@@ -125,6 +180,27 @@ public abstract class IwaApplication extends Application
 		Logger.getLogger(theme).log(level, timeStamp + " (User: " + userName + "): " + message);
 	}
 	
+	/**
+	 * Returns the registry that contains all IWA modules
+	 * 
+	 * @return
+	 */
+	public ModuleRegistry getModuleRegistry() {
+		return moduleRegistry;
+	}
+
+	/**
+	 * Part of the Thread Local Pattern implementation
+	 * 
+	 * @return
+	 */
+	public static IwaApplication getInstance() {
+		return threadLocal.get();
+	}
+	
+	/**
+	 * Internal main initialization method 
+	 */
 	private void initIwa() {
 		setInstance(this);
 		loadProperties();
@@ -145,7 +221,7 @@ public abstract class IwaApplication extends Application
 
 		// Must run after MainWindow Creation
 		initializeFullScreenViews(); 
-		registerFullScreenView(LoginView.class);
+		registerFullScreenView(LoginView.class, LOGIN_URI);
 
 		setErrorHandler();
 		
@@ -153,34 +229,6 @@ public abstract class IwaApplication extends Application
 		ViewHandler.activateView(LoginView.class);
 	}
 	
-	public void changeLocale(Locale newLocale) {
-		this.locale = newLocale;
-		super.setLocale(newLocale);
-		Lang.initialize(getInstance());
-		Lang.setLocale(newLocale);
-		ViewHandler.clear();
-		getModuleRegistry().clear();
-		initializeModules();
-		initializeFullScreenViews();
-		registerFullScreenView(LoginView.class);
-		((MainWindow)getMainWindow()).refresh();
-		writeLocalToCookie(newLocale);
-	}
-	
-	@Override
-	public void handleParameters(Map<String, String[]> parameters) {
-		// Language Handling
-		if (parameters.containsKey(CMD_LINE_PARAMETER_LANG)) {
-			String value = parameters.get(CMD_LINE_PARAMETER_LANG)[0];
-			
-			if (value != null && (value.length() == 2)) {
-				Locale newLocale = new Locale(value);
-				changeLocale(newLocale);
-			}
-		}		
-		// enable the application to further process parameters
-		handleParametersByApplication(parameters);
-	}	
 
 	/**
 	 * This is a global error catcher to avoid having Stack Traces Pop Ups
@@ -207,6 +255,13 @@ public abstract class IwaApplication extends Application
 		});
 	}
 	
+	/**
+	 * Internal helper to determine a certain exception type 
+	 * we handle explicitly
+	 * 
+	 * @param throwable
+	 * @return
+	 */
 	private boolean isVaadinValidationException(Throwable throwable) {
 		
 		if (throwable == null) return false;		
@@ -229,6 +284,9 @@ public abstract class IwaApplication extends Application
 		return stringWriter.toString();
 	}
 	
+	/**
+	 * Loads the IWA properties file
+	 */
 	private void loadProperties() {	
 		try {			
 			FileInputStream fileInputStream = new FileInputStream(getContext().getBaseDirectory().getPath() + PROPERTIES_FILE_PATH);
@@ -242,7 +300,11 @@ public abstract class IwaApplication extends Application
 	 * This is to prevent "out-of-synch" situations
 	 * as proposed in http://vaadin.com/forum/-/message_boards/view_message/158627
 	 * or http://vaadin.com/web/joonas/wiki/-/wiki/Main/Supporting%20Multible%20Tabs
-	 * TODO: revisit, needs changes in Appfoundation library 
+	 * 
+	 * TODO: 
+	 * revisit, needs changes in Appfoundation library, might be fixed with 
+	 * Vaadin 7 anyway
+	 *  
 	 */
 	/*
 	@Override
@@ -308,18 +370,6 @@ public abstract class IwaApplication extends Application
 		}
 	}
 	
-	public ModuleRegistry getModuleRegistry() {
-		return moduleRegistry;
-	}
-
-	/**
-	 * Part of the Thread Local Pattern implementation
-	 * 
-	 * @return
-	 */
-	public static IwaApplication getInstance() {
-		return threadLocal.get();
-	}
 
 	/**
 	 * Part of the Thread Local Pattern implementation
@@ -333,6 +383,11 @@ public abstract class IwaApplication extends Application
 		}
 	}
 	
+	/**
+	 * Helper for the Multi-Language support
+	 *  
+	 * @param request
+	 */
 	private void readLocaleFromCookie(HttpServletRequest request) {
 		Cookie[] cookies = request.getCookies();
 		if (cookies == null) {
@@ -355,11 +410,19 @@ public abstract class IwaApplication extends Application
 		this.locale = Locale.getDefault();
 	}
 	
+	/**
+	 * Helper for the Multi-Language support
+	 * 
+	 * @param locale
+	 */
 	private void writeLocalToCookie(Locale locale) {
 		Cookie cookie = new Cookie(COOKIE_NAME_IWA_LOCALE, locale.getLanguage());
 		response.addCookie(cookie);
 	}
 	
+	/**
+	 * The main module init method
+	 */
 	private void initializeModules() {
 		// Register default module at start
 		getModuleRegistry().registerModule(new ApplicationModule());	
@@ -370,16 +433,11 @@ public abstract class IwaApplication extends Application
 		// Register default module at end		
 		getModuleRegistry().registerModule(new AdministrationModule());		
 	}
-		
-	protected void registerFullScreenView(Object view) {
-		registerFullScreenView(view, null);
-	}
-	
+			
 	/**
 	 * Override in your application
 	 */
 	protected abstract void initApplication();
-
 
 	/**
 	 * Override in your application

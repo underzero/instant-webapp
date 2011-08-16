@@ -76,6 +76,11 @@ public class ChangeLocaleDialog extends Window {
 	}
 	
 
+	/**
+	 * Creates the select component for the new locale
+	 * 
+	 * @return
+	 */
 	private ComboBox createComboBox() {
 		comboBox = new ComboBox(Lang.getMessage("NewLocale"));
 		comboBox.setItemCaptionMode(Select.ITEM_CAPTION_MODE_EXPLICIT);

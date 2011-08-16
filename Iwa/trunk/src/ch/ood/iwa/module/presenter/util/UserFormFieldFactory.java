@@ -14,10 +14,11 @@ import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.DefaultFieldFactory;
 import com.vaadin.ui.Field;
+import com.vaadin.ui.FormFieldFactory;
 import com.vaadin.ui.TextField;
 
 /**
- * FormFieldFactory for the User Form
+ * A specialzed {@link FormFieldFactory} for the User Form
  * 
  * @author Mischa
  *
@@ -25,7 +26,6 @@ import com.vaadin.ui.TextField;
 public class UserFormFieldFactory extends DefaultFieldFactory implements Serializable {
 	
 	private static final long serialVersionUID = 1L;	
-	
 	private static String[] visibleFields = {
 		"username",
 		"name",		
@@ -33,12 +33,7 @@ public class UserFormFieldFactory extends DefaultFieldFactory implements Seriali
 		"role",
 		"passwordAsString"			
 	};
-	
 	private ComboBox comboBox;
-	
-	public UserFormFieldFactory () {
-		super();		
-	}
 
 	public static String[] getVisibleFields() {
 		return visibleFields;

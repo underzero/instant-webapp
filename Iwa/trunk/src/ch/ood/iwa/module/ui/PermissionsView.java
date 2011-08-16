@@ -31,14 +31,12 @@ public class PermissionsView
 				implements PermissionsPresenter.UI, Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
 	private Label label;
 	private Table table;	
 	private Form form = new Form();
 	private Button btnNew;		
 	private Button btnSave;
 	private Button btnDelete;
-	
 	private Label lblRoles;
 	private Form frmRoles = new Form();	
 	private Button btnDeleteRole;	

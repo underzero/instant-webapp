@@ -11,6 +11,12 @@ import com.vaadin.ui.Embedded;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
+/**
+ * A welcome view 
+ * 
+ * @author Mischa
+ *
+ */
 public class WelcomeView extends AbstractModuleView<VerticalLayout, WelcomePresenter, WelcomePresenter.UI> implements WelcomePresenter.UI {
 
 	private static final long serialVersionUID = 1L;	

@@ -1,6 +1,5 @@
 package ch.ood.iwa.module.presenter;
 
-import ch.ood.iwa.module.presenter.AbstractModulePresenter;
 
 /**
  * The Welcome Presenter has not much to do
@@ -13,7 +12,8 @@ public class WelcomePresenter extends AbstractModulePresenter<WelcomePresenter.U
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Interface for communication between Presenter and View
+	 * This is the interface that decouples Presenter and View
+	 * 
 	 */
 	public static interface UI {}
 }

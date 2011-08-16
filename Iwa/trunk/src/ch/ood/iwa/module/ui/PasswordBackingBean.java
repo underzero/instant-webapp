@@ -11,11 +11,13 @@ import java.io.Serializable;
 public class PasswordBackingBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
 	private String oldPassword = "";
 	private String newPassword = "";
 	private String newPasswordRepeated = "";
 
+	/**
+	 * Clears all fields
+	 */
 	public void reset() {
 		setOldPassword("");
 		setNewPassword("");

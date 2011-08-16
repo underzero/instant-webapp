@@ -10,7 +10,7 @@ package ch.ood.iwa.module.ui;
 public interface ModuleView {
 
 	/**
-	 * The name of this view to be displayed in the main menu
+	 * The name of this view (to be translated for displaying)
 	 * 
 	 * @return
 	 */
