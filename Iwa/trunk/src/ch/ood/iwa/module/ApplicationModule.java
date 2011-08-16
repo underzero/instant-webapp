@@ -16,9 +16,11 @@ import com.vaadin.terminal.ThemeResource;
 public class ApplicationModule extends AbstractModule implements Serializable {
 		
 	private static final long serialVersionUID = 1L;
-	
 	private static final ThemeResource icon = new ThemeResource("../runo/icons/16/globe.png");
 	
+	/**
+	 * Default Constructor
+	 */
 	public ApplicationModule()  {
 		super("General");
 		

@@ -40,7 +40,8 @@ public class IwaPersistenceHelper {
 	}
 	
 	/**
-	 * Reads the Role from the datastore
+	 * Reads the Role from the datastore.
+	 * It looks up a Role by id or, if not found, by identifier
 	 * 
 	 * @param user
 	 * @return

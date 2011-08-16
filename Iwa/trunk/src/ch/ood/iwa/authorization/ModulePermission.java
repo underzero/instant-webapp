@@ -17,10 +17,19 @@ public class ModulePermission extends AbstractPojo {
 	private String roleName = "";
 	private String moduleName = "";
 	
+	/**
+	 * Default Constructor
+	 */
 	public ModulePermission() {
 		super();
 	}	
 	
+	/** 
+	 * Convenience Constructor
+	 * 
+	 * @param roleName
+	 * @param moduleName
+	 */
 	public ModulePermission(String roleName, String moduleName) {
 		super();
 		this.roleName = roleName;

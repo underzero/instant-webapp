@@ -18,9 +18,10 @@ import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.DefaultFieldFactory;
 import com.vaadin.ui.Field;
+import com.vaadin.ui.FormFieldFactory;
 
 /**
- * FormFieldFactory for the Permissions Form
+ * A specialzed {@link FormFieldFactory} for the Permissions Form
  * 
  * @author Mischa
  *
@@ -28,18 +29,12 @@ import com.vaadin.ui.Field;
 public class PermissionFormFieldFactory extends DefaultFieldFactory implements Serializable {
 	
 	private static final long serialVersionUID = 1L;	
-	
 	private static String[] visibleFields = {
 		"roleName",
 		"moduleName",					
 	};
-	
 	private ComboBox comboBoxRoles;
 	private ComboBox comboBoxModules;
-	
-	public PermissionFormFieldFactory () {
-		super();		
-	}
 
 	public static String[] getVisibleFields() {
 		return visibleFields;

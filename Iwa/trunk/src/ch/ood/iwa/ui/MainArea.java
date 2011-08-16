@@ -9,10 +9,15 @@ import com.vaadin.ui.Component;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.themes.Reindeer;
 
+/**
+ * Helper for the IWA {@link MainWindow}
+ * 
+ * @author Mischa
+ *
+ */
 public class MainArea extends AbstractView<Panel> implements ViewContainer {
 
     private static final long serialVersionUID = 1L;
-
     private View currentView;
 
     public MainArea() {    	
@@ -21,10 +26,12 @@ public class MainArea extends AbstractView<Panel> implements ViewContainer {
         getContent().setStyleName(Reindeer.PANEL_LIGHT);
         getContent().addComponent(ViewHandler.getUriFragmentUtil());
     }
+    
     @Override
     public void activated(Object... params) {
         // Do nothing
     }
+    
     @Override
     public void deactivated(Object... params) {
         // Do nothing

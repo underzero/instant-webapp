@@ -13,6 +13,13 @@ import com.vaadin.ui.Button;
  */
 public class UiFactory {
 	
+	/**
+	 * Creates a button with translated text and an icon.
+	 * 
+	 * 
+	 * @param textKey
+	 * @return
+	 */
 	public static Button createButton(String textKey) {
 		Button button = new Button(Lang.getMessage(textKey));
 		button.setIcon(getIconForName(textKey));

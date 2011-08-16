@@ -38,7 +38,8 @@ public class PermissionsPresenter extends AbstractModulePresenter<PermissionsPre
 	private PermissionsContainer permissionsContainer;
 	
 	/**
-	 * Interface for communication between Presenter and View
+	 * This is the interface that decouples Presenter and View
+	 * 
 	 */
 	public static interface UI extends IwaModuleUI {		
 		Table getTable();

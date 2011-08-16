@@ -12,7 +12,7 @@ import ch.ood.iwa.module.ui.ModuleView;
 import com.vaadin.ui.Tree;
 
 /**
- * Layer Supertype
+ * Layer Supertype. All IWA modules should inherit from this class.
  * 
  * @author Mischa
  *
@@ -25,6 +25,11 @@ public abstract class AbstractModule implements Module, Serializable {
 	private String displayName; 
 	private String name;
 	
+	/**
+	 * Convenience Constructor
+	 * 
+	 * @param name
+	 */
 	public AbstractModule(String name) {
 		super();
 		this.name = name;
@@ -37,21 +42,33 @@ public abstract class AbstractModule implements Module, Serializable {
 		}
 	}
 	
+	/**
+	 * Register a View with this module
+	 */
 	@Override
 	public void registerView(ModuleView view) {
 		views.add(view);		
 	}
 
+	/**
+	 * The translated module name
+	 */
 	@Override
 	public String getDisplayName() {
 		return displayName;
 	}
 	
+	/**
+	 * The module name, not translated
+	 */
 	@Override
 	public String getName() {
 		return name;
 	}
 			
+	/**
+	 * Returns all (translated) view names as {@link Tree}
+	 */
 	@Override
 	public Tree getViewNamesAsTree() {		
 		Tree viewNamesTree = new Tree();
@@ -63,6 +80,9 @@ public abstract class AbstractModule implements Module, Serializable {
 		return viewNamesTree;
 	}
 		
+	/**
+	 * Returns all (translated) view names as {@link Set}
+	 */
 	@Override
 	public Set<String> getViewNamesAsSet() {		
 		Set<String> viewNames = new HashSet<String>();
@@ -72,6 +92,9 @@ public abstract class AbstractModule implements Module, Serializable {
 		return viewNames;
 	}	
 		
+	/**
+	 * Returns a view by its name
+	 */
 	@Override
 	public View getViewByName(String name) {
 		for (ModuleView view : views) {
@@ -82,10 +105,9 @@ public abstract class AbstractModule implements Module, Serializable {
 		return null;		
 	}
 	
-	protected void setDisplayName(String displayName) {
-		this.displayName = displayName;		
-	}
-	
+	/**
+	 * Returns all Views
+	 */
 	@Override
 	public Set<View> getAllViews() {		
 		Set<View> appFoundationViews = new HashSet<View>();		
@@ -120,4 +142,13 @@ public abstract class AbstractModule implements Module, Serializable {
 			return false;
 		return true;
 	}
+	
+	/**
+	 * Allows to set the (translated) display name
+	 * 
+	 * @param displayName
+	 */
+	protected void setDisplayName(String displayName) {
+		this.displayName = displayName;		
+	}	
 }

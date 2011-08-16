@@ -29,7 +29,6 @@ public class UsersView
 				implements UsersPresenter.UI, Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
 	private Label label;
 	private Table table;	
 	private Form form = new Form();
