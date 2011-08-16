@@ -42,7 +42,7 @@ public class IwaSampleModule extends AbstractModule implements Serializable {
 
 A module can have multiple Views that are registered in the Modules Constructor.
 
-The module is then registered in your application class:
+The module is then registered in your application class code (look for the method "initializeModulesByApplication" at the end of the class):
 
 {{{
 public class IwaSampleApplication extends IwaApplication {
