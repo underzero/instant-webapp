@@ -59,8 +59,9 @@ public class UserFormFieldFactory extends DefaultFieldFactory implements Seriali
 		} else if ("email".equals(pid)) {
 			fieldName = Lang.getMessage("Email");
 			f.setRequired(true);
+			f.addValidator(new EmailFieldValidator());			
 			f.setRequiredError(Lang.getMessage("ValueRequiredMsg", fieldName));		
-
+			
 		} else if ("role".equals(pid)) {
 			return createRoleComboBox(item, pid);
 			

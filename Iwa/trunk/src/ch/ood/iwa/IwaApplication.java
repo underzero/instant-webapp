@@ -131,9 +131,6 @@ public abstract class IwaApplication extends Application
 		writeLocalToCookie(newLocale);
 	}
 	
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public void handleParameters(Map<String, String[]> parameters) {
 		// Language Handling

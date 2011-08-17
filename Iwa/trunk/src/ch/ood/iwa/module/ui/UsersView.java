@@ -58,7 +58,7 @@ public class UsersView
 	private void initTable() {		
 		table = new Table(null, getPresenter().getUsersContainer());		
 		table.setWidth("100%");
-		table.setHeight("120px");
+		table.setHeight("240px");
 		table.setVisibleColumns(UsersContainer.getVisibleColumns());
 		table.setColumnHeaders(translateStringArray(UsersContainer.getColumnCaptions()));
 		table.setSelectable(true);

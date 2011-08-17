@@ -17,7 +17,6 @@ import ch.ood.iwa.authorization.ModulePermission;
  *
  */
 public class IwaPersistenceHelper {
-
 	
 	/**
 	 * Reads the User from the datastore
@@ -26,7 +25,11 @@ public class IwaPersistenceHelper {
 	 * @return
 	 */
 	public User refreshUser(User user) {
-		return FacadeFactory.getFacade().find(User.class, user.getId());
+		if (user == null || user.getId() == null) {
+			return null;
+		} else {
+			return FacadeFactory.getFacade().find(User.class, user.getId());
+		}
 	}
 	
 	/**
@@ -36,7 +39,11 @@ public class IwaPersistenceHelper {
 	 * @return
 	 */
 	public ModulePermission refreshPermission(ModulePermission permission) {
-		return FacadeFactory.getFacade().find(ModulePermission.class, permission.getId());
+		if (permission == null || permission.getId() == null) {
+			return null;
+		} else {
+			return FacadeFactory.getFacade().find(ModulePermission.class, permission.getId());
+		}
 	}
 	
 	/**
@@ -47,6 +54,11 @@ public class IwaPersistenceHelper {
 	 * @return
 	 */
 	public Role refreshRole(Role role) {
+		// Guard
+		if (role == null) {
+			return null;
+		}
+		
 		if (role.getId() != null) {
 			return FacadeFactory.getFacade().find(Role.class, role.getId());
 		} else {
