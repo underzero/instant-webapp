@@ -8,6 +8,7 @@ import org.vaadin.appfoundation.authentication.data.User;
 import org.vaadin.appfoundation.authentication.util.PasswordUtil;
 import org.vaadin.appfoundation.i18n.Lang;
 import org.vaadin.appfoundation.persistence.facade.FacadeFactory;
+import org.vaadin.dialogs.ConfirmDialog;
 
 import ch.ood.iwa.IwaPersistenceHelper;
 import ch.ood.iwa.module.presenter.util.UserFormFieldFactory;
@@ -141,7 +142,11 @@ public class UsersPresenter extends AbstractModulePresenter<UsersPresenter.UI> i
 		getUi().getBtnSave().setEnabled(true);
 	}
 	
-	private void handleDeleteButtonClicked() {			
+	private void handleDeleteButtonClicked() {
+		getUi().showConfirmation("", Lang.getMessage("ConfirmDeleteMsg"), new ConfirmDeleteUserDialogListener());
+	}
+	
+	private void deleteUser() {			
 		// Cache the current items neighbours
 		User selectedUser = getSelectedUser();
 		
@@ -252,7 +257,6 @@ public class UsersPresenter extends AbstractModulePresenter<UsersPresenter.UI> i
 		getUi().getTable().select(selectedUser);						
 	}
 
-	
 	private void refreshView() {
 		if (getSelectedUser() == null) {
 			getUi().getBtnNew().setEnabled(true);
@@ -264,4 +268,17 @@ public class UsersPresenter extends AbstractModulePresenter<UsersPresenter.UI> i
 			getUi().getBtnSave().setEnabled(true);			
 		}
 	}
+	
+	/**
+	 * Little helper, can not be implemented anonymously for GAE requires it to be Serializable 
+	 */
+	private class ConfirmDeleteUserDialogListener implements ConfirmDialog.Listener, Serializable {
+		private static final long serialVersionUID = 1L;
+		@Override
+		public void onClose(ConfirmDialog dialog) {
+			if (dialog.isConfirmed()) {
+				deleteUser();
+			} 
+		}
+	}		
 }

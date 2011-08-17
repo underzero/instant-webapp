@@ -2,6 +2,7 @@ package ch.ood.iwa.module;
 
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import org.vaadin.appfoundation.i18n.Lang;
@@ -21,7 +22,7 @@ public abstract class AbstractModule implements Module, Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private Set<ModuleView> views = new HashSet<ModuleView>();
+	private Set<ModuleView> views = new LinkedHashSet<ModuleView>();
 	private String displayName; 
 	private String name;
 	

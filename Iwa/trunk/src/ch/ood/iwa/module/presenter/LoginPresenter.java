@@ -121,11 +121,12 @@ public class LoginPresenter extends AbstractModulePresenter<LoginPresenter.UI> i
 									IwaApplication.getInstance().getProperties().getProperty("vemico.environment"), 
 									newPassword);
 		
-		System.out.println(message); // TODO: Remove me
+		IwaApplication.getInstance().log(null, null, message);
 		
 		try {
 			IwaMailSender.send(user.getEmail(), user.getName(), Lang.getMessage("NewPasswordMailSubjectMsg"), message);
 		} catch (Exception e) {
+			IwaApplication.getInstance().logError(e);
 			getUi().showError(Lang.getMessage("PasswordSentFailedMsg"), null);
 		}
 	}
