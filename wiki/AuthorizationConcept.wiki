@@ -1,4 +1,4 @@
-#summary The AuthorizationConcept
+#summary The Authorization Concept explained
 
 = Introduction =
 
