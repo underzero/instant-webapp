@@ -1,0 +1,13 @@
+#summary Frequently Asked Questions
+
+=How to change the style of my IWA based application=
+The file /war/VAADIN/themes/iwa/styles.css (that inherits from the Vaadin /reindeer/styles.css) is the place to override things
+
+=How to change the persistence facade implementation=
+Change the web.xml file and provide your own !ServletContextListener instead of the !IwaContextListener
+
+=How to change the IWA logo=
+Replace /war/VAADIN/themes/iwa/img/logo.png
+
+=How to replace the favicon=
+Replace /war/VAADIN/themes/iwa/favicon.ico
