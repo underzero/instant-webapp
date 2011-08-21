@@ -25,6 +25,7 @@ public abstract class AbstractModule implements Module, Serializable {
 	private Set<ModuleView> views = new LinkedHashSet<ModuleView>();
 	private String displayName; 
 	private String name;
+	private Tree viewNamesTree;
 	
 	/**
 	 * Convenience Constructor
@@ -72,11 +73,13 @@ public abstract class AbstractModule implements Module, Serializable {
 	 */
 	@Override
 	public Tree getViewDisplayNamesAsTree() {		
-		Tree viewNamesTree = new Tree();
-		for (ModuleView view : views) {
-			String name = view.getDisplayName();
-			viewNamesTree.addItem(name);			
-			viewNamesTree.setChildrenAllowed(name, false);
+		if (viewNamesTree == null) {
+			viewNamesTree = new Tree();
+			for (ModuleView view : views) {
+				String name = view.getDisplayName();
+				viewNamesTree.addItem(name);			
+				viewNamesTree.setChildrenAllowed(name, false);
+			}
 		}
 		return viewNamesTree;
 	}

@@ -95,6 +95,7 @@ public class UsersView
 	
 	@Override
 	public void activated(Object... params) {
+		super.activated(params);
 		getPresenter().activated(params);
 	}	
 	

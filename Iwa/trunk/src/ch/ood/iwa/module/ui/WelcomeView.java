@@ -5,7 +5,6 @@ import org.vaadin.appfoundation.i18n.Lang;
 import ch.ood.iwa.IwaApplication;
 import ch.ood.iwa.module.presenter.WelcomePresenter;
 
-import com.vaadin.event.MouseEvents.ClickEvent;
 import com.vaadin.terminal.ThemeResource;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Embedded;
@@ -28,7 +27,7 @@ public class WelcomeView extends AbstractModuleView<VerticalLayout, WelcomePrese
 		getContent().setSpacing(true);		
 		Embedded e = new Embedded(null, new ThemeResource(IwaApplication.LOGO_FILE_PATH));
 		getContent().addComponent(e);
-		getContent().addComponent(new Label(Lang.getMessage("WelcomeMsg")));
+		getContent().addComponent(new Label(Lang.getMessage("WelcomeMsg")));	
 	}
 	
 	@Override
@@ -44,19 +43,7 @@ public class WelcomeView extends AbstractModuleView<VerticalLayout, WelcomePrese
 	public void removeComponent(Component c) {
 		getContent().removeComponent(c);
 	}	
-
-	@Override
-	public void activated(Object... params) {
-	}
-
-	@Override
-	public void deactivated(Object... params) {
-	}
-
-	@Override
-	public void click(ClickEvent event) {
-	}
-	
+		
 	@Override
 	public boolean isFullScreen() {
 		return false;
