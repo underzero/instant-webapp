@@ -1,5 +1,7 @@
 package ch.ood.iwa.ui;
 
+import java.util.Set;
+
 import org.vaadin.appfoundation.authentication.SessionHandler;
 import org.vaadin.appfoundation.i18n.Lang;
 import org.vaadin.appfoundation.view.View;
@@ -101,7 +103,7 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
 			ViewHandler.activateView(LoginView.class);
 		} else {
 			try {
-				View view = IwaApplication.getInstance().getModuleRegistry().getViewByName(source);
+				View view = IwaApplication.getInstance().getModuleRegistry().getViewByDisplayName(source);
 				ViewHandler.activateView(view.getClass());
 			} catch (IwaException e) {
 				showNotification(e.getMessage(), e.getDetails(), Notification.TYPE_ERROR_MESSAGE);
@@ -167,21 +169,22 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
 		// Guard
 		if (SessionHandler.get() == null) {
 			return;
-		}
-		
+		}		
 		// Clean up first
 		menu.removeAllComponents();
 		
-		for (Module module : IwaApplication.getInstance().getModuleRegistry().getAllModules()) {
+		// Go through all modules 				
+		for (Module module : IwaApplication.getInstance().getModuleRegistry().getAllModules()) {					
+			// Only add this module if current user has the according permissions
 			if (new ModulePermissionManager().hasPermission(SessionHandler.get().getRole(), module)) {
-				Tree tree = module.getViewNamesAsTree();
+				Tree tree = module.getViewDisplayNamesAsTree();
 				tree.addListener(this);
 				menu.addTab(tree, module.getDisplayName(), module.getIcon());
 				// register all views of this module
 				for (View view : module.getAllViews()) {
 					ViewHandler.addView(view.getClass(), this);
 				}				
-			}
+			}			
 		}
 	}
 	

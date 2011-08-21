@@ -43,9 +43,8 @@ public class PermissionsView
 	
 	public PermissionsView() {		
 		// Common View Settings
-		super(new CustomLayout("PermissionsViewLayout"), new PermissionsPresenter());
-		getPresenter().setUi(this);
-		setName(Lang.getMessage("Permissions"));
+		super("Permissions", new CustomLayout("PermissionsViewLayout"), new PermissionsPresenter());
+		getPresenter().setUi(this);		
 		initLayout();
 		getPresenter().initListeners();
 	

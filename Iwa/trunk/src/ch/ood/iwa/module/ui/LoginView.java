@@ -40,7 +40,7 @@ public class LoginView
 	private ChangeLocaleDialog changeLocaleDialog;
 			
 	public LoginView() {
-		super(new CustomLayout("LoginViewLayout"), new LoginPresenter());		
+		super("LoginView", new CustomLayout("LoginViewLayout"), new LoginPresenter());		
 		initView();
 		initListeners();	
 		getPresenter().setUi(this);

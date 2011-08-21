@@ -56,7 +56,7 @@ public class ModulePermissionManager {
 	 * @param module
 	 */
 	public void addPermission(Role role, Module module) {
-		if (readPermission(role.getIdentifier(), module.getDisplayName()) == null) {
+		if (readPermission(role.getIdentifier(), module.getName()) == null) {
 			ModulePermission permission = new ModulePermission(role.getIdentifier(), module.getName());
 			FacadeFactory.getFacade().store(permission);
 		}

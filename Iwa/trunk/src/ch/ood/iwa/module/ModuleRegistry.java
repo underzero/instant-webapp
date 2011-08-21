@@ -38,8 +38,7 @@ public class ModuleRegistry implements Serializable {
 	public Set<Module> getAllModules() {
 		return modules;
 	}		
-	
-	
+		
 	/**
 	 * Convenience method to retrieve a view by its name
 	 * @param name
@@ -57,6 +56,24 @@ public class ModuleRegistry implements Serializable {
 		}
 		return null;
 	}
+	
+	/**
+	 * Convenience method to retrieve a view by its display name
+	 * @param name
+	 * @return
+	 * @throws IwaException
+	 */
+	public View getViewByDisplayName(String name) throws IwaException {
+		if (name == null) throw new IwaInternalExeption("Parameter must not be null");
+		for (Module module : getAllModules()) {
+			for (String viewName : module.getViewDisplayNamesAsSet()) {
+				if(viewName.equals(name)) {
+					return module.getViewByDisplayName(viewName);
+				}
+			}
+		}
+		return null;
+	}	
 	
 	/**
 	 * Removes all modules

@@ -71,10 +71,10 @@ public abstract class AbstractModule implements Module, Serializable {
 	 * Returns all (translated) view names as {@link Tree}
 	 */
 	@Override
-	public Tree getViewNamesAsTree() {		
+	public Tree getViewDisplayNamesAsTree() {		
 		Tree viewNamesTree = new Tree();
 		for (ModuleView view : views) {
-			String name = view.getName();
+			String name = view.getDisplayName();
 			viewNamesTree.addItem(name);			
 			viewNamesTree.setChildrenAllowed(name, false);
 		}
@@ -82,7 +82,7 @@ public abstract class AbstractModule implements Module, Serializable {
 	}
 		
 	/**
-	 * Returns all (translated) view names as {@link Set}
+	 * Returns all view names as {@link Set}
 	 */
 	@Override
 	public Set<String> getViewNamesAsSet() {		
@@ -92,6 +92,19 @@ public abstract class AbstractModule implements Module, Serializable {
 		}
 		return viewNames;
 	}	
+	
+	/**
+	 * 
+	 * Returns all (translated) view names as {@link Set}
+	 */
+	@Override
+	public Set<String> getViewDisplayNamesAsSet() {		
+		Set<String> viewNames = new HashSet<String>();
+		for (ModuleView view : views) {			
+			viewNames.add(view.getDisplayName());			
+		}
+		return viewNames;
+	}		
 		
 	/**
 	 * Returns a view by its name
@@ -105,6 +118,19 @@ public abstract class AbstractModule implements Module, Serializable {
 		}
 		return null;		
 	}
+		
+	/**
+	 * Returns a view by its translated name
+	 */
+	@Override
+	public View getViewByDisplayName(String name) {
+		for (ModuleView view : views) {
+			if (view.getDisplayName().equals(name)) {
+				return (View)view;
+			}
+		}
+		return null;		
+	}	
 	
 	/**
 	 * Returns all Views

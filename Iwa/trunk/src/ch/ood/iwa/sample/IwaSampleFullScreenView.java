@@ -22,9 +22,8 @@ public class IwaSampleFullScreenView
 	private Button btnHello;		
 	
 	public IwaSampleFullScreenView() {		
-		super(new VerticalLayout(), new IwaSamplePresenter());
-		getPresenter().setUi(this);
-		setName("Template");
+		super("Template", new VerticalLayout(), new IwaSamplePresenter());
+		getPresenter().setUi(this);		
 		initLayout();
 		getPresenter().initListeners(); 		
 	}
