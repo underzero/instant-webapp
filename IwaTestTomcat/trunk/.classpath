@@ -25,7 +25,7 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/geronimo-jpa_3.0_spec-1.1.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/imap.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/iwa.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/iwa.jar" sourcepath="/Iwa/src"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jdo2-api-2.3-eb.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mailapi.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.16-bin.jar"/>
@@ -34,5 +34,9 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/vaadin-6.6.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xom-1.2.6.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib-dev/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="lib-dev/datanucleus-enhancer-1.1.4.jar"/>
+	<classpathentry kind="lib" path="lib-dev/log4j-1.2.8.jar"/>
+	<classpathentry kind="lib" path="lib-dev/log4j.license.txt"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
