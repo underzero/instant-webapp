@@ -21,9 +21,8 @@ public class IwaSampleView
 	private Button btnHello;		
 	
 	public IwaSampleView() {		
-		super(new VerticalLayout(), new IwaSamplePresenter());
-		getPresenter().setUi(this);
-		setName("Template");
+		super("Sample", new VerticalLayout(), new IwaSamplePresenter());
+		getPresenter().setUi(this);		
 		initLayout();
 		getPresenter().initListeners(); 		
 	}
