@@ -498,6 +498,14 @@
 				<seg>Es gab ein unerwartetes, system-internes Problem. Bitte melden Sie das an {0}</seg>
 			</tuv>
 		</tu>
+		<tu tuid="InvalidEmailMsg">
+			<tuv lang="en">
+				<seg>The email address "{0}" is not a valid email adress</seg>
+			</tuv>
+			<tuv lang="de">
+				<seg>Die E-Mail Adresse "{0} ist ungültig"</seg>
+			</tuv>
+		</tu>				
 		<tu tuid="LoginFailedMsg">
 			<tuv lang="en">
 				<seg>Login has failed. Please check your username and password</seg>
@@ -599,10 +607,10 @@
 		</tu>
 		<tu tuid="CopyrightMsg">
 			<tuv lang="en">
-				<seg>Copyright (C) 2011 <a href="http://ood.ch">OOD Ltd. All rights reserved</a> </seg>
+				<seg>Powered by Instant Web App (IWA)</seg>
 			</tuv>
 			<tuv lang="de">
-				<seg>Copyright (C) 2011 <a href="http://ood.ch">OOD Ltd. All rights reserved</a> </seg>
+				<seg>Powered by Instant Web App (IWA)</seg>
 			</tuv>
 		</tu>			
 	</body>
