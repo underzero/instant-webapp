@@ -137,6 +137,22 @@
 				<seg>Allgemeines</seg>
 			</tuv>
 		</tu>
+		<tu tuid="Help">
+			<tuv lang="en">
+				<seg>Help</seg>
+			</tuv>
+			<tuv lang="de">
+				<seg>Hilfe</seg>
+			</tuv>
+		</tu>
+		<tu tuid="HelpUrl">
+			<tuv lang="en">
+				<seg>http://code.google.com/p/instant-webapp/wiki/FAQ</seg>
+			</tuv>
+			<tuv lang="de">
+				<seg>http://code.google.com/p/instant-webapp/wiki/FAQ</seg>
+			</tuv>
+		</tu>		
 		<tu tuid="Home">
 			<tuv lang="en">
 				<seg>Home</seg>
