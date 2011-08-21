@@ -1,7 +1,5 @@
 package ch.ood.iwa.ui;
 
-import java.util.Set;
-
 import org.vaadin.appfoundation.authentication.SessionHandler;
 import org.vaadin.appfoundation.i18n.Lang;
 import org.vaadin.appfoundation.view.View;
@@ -12,11 +10,14 @@ import ch.ood.iwa.IwaApplication;
 import ch.ood.iwa.IwaException;
 import ch.ood.iwa.authorization.ModulePermissionManager;
 import ch.ood.iwa.module.Module;
+import ch.ood.iwa.module.ModuleRegistry;
 import ch.ood.iwa.module.ui.LoginView;
 import ch.ood.iwa.module.ui.ModuleView;
+import ch.ood.iwa.module.ui.WelcomeView;
 
 import com.vaadin.event.ItemClickEvent;
 import com.vaadin.event.ItemClickEvent.ItemClickListener;
+import com.vaadin.event.MouseEvents.ClickListener;
 import com.vaadin.terminal.ThemeResource;
 import com.vaadin.ui.Accordion;
 import com.vaadin.ui.Alignment;
@@ -144,6 +145,16 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
         // Logo
         Embedded logo = new Embedded(null, new ThemeResource(IwaApplication.LOGO_FILE_PATH));
         panel.getContent().addComponent(logo);
+        // Add a "Home" - Link to the image
+        logo.setDescription("Home");
+        logo.addListener(new ClickListener() {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void click(com.vaadin.event.MouseEvents.ClickEvent event) {
+				ViewHandler.activateView(WelcomeView.class);				
+			}
+		});
         
         // Current User
         lblCurrentUser.addStyleName("label-right-align");
@@ -185,6 +196,24 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
 					ViewHandler.addView(view.getClass(), this);
 				}				
 			}			
+		}
+	}
+	
+	/**
+	 * Synchronizes the navigation menu with the given view 
+	 *  
+	 * @param viewName
+	 */
+	public void synchronizeNavigation(String viewName) {
+		ModuleRegistry moduleRegistry = IwaApplication.getInstance().getModuleRegistry();		
+		for (Module module : moduleRegistry.getAllModules()) {			
+			ModuleView view = (ModuleView)module.getViewByName(viewName);			
+			if (view != null) {			
+				String viewDisplayName = view.getDisplayName();			
+				Tree tree = module.getViewDisplayNamesAsTree();			
+				menu.setSelectedTab(tree);
+				tree.select(viewDisplayName);
+			}					
 		}
 	}
 	

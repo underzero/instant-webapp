@@ -4,6 +4,7 @@ import org.vaadin.appfoundation.i18n.Lang;
 import org.vaadin.appfoundation.view.AbstractView;
 import org.vaadin.dialogs.ConfirmDialog;
 
+import ch.ood.iwa.IwaApplication;
 import ch.ood.iwa.module.presenter.ModulePresenter;
 import ch.ood.iwa.ui.MainWindow;
 
@@ -128,7 +129,8 @@ public abstract class AbstractModuleView<A extends ComponentContainer, P extends
 	 * {@inheritDoc}
 	 */
 	@Override
-	public void activated(Object... params) {
+	public void activated(Object... params) {	
+		((MainWindow)IwaApplication.getInstance().getMainWindow()).synchronizeNavigation(getName());
 	}
 
 	/**
