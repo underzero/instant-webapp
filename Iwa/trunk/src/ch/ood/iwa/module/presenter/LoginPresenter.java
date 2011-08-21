@@ -39,6 +39,7 @@ public class LoginPresenter extends AbstractModulePresenter<LoginPresenter.UI> i
 	
 	private static final long serialVersionUID = 1L;
 	private static final String IWA_LANGS_KEY = "iwa.languages";
+	private static final String IWA_ENVIRONMENT_KEY = "iwa.environment";
 	
 	/**
 	 * This is the interface that decouples Presenter and View
@@ -118,7 +119,7 @@ public class LoginPresenter extends AbstractModulePresenter<LoginPresenter.UI> i
 		updatePasswordAndPersistUser(user, newPassword);
 		String message = Lang.getMessage("NewPasswordMailContentMsg", 
 									user.getUsername(),  
-									IwaApplication.getInstance().getProperties().getProperty("vemico.environment"), 
+									IwaApplication.getInstance().getProperties().getProperty(IWA_ENVIRONMENT_KEY), 
 									newPassword);
 		
 		IwaApplication.getInstance().log(null, null, message);

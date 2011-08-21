@@ -26,6 +26,7 @@ public abstract class AbstractModuleView<A extends ComponentContainer, P extends
 
 	private static final long serialVersionUID = 1L;
 	private String name;
+	private String displayName;
 	private P presenter;
 	
 	/**
@@ -34,11 +35,31 @@ public abstract class AbstractModuleView<A extends ComponentContainer, P extends
 	 * @param layout
 	 * @param presenter
 	 */
-	protected AbstractModuleView(A layout, P presenter) {
+	protected AbstractModuleView(String name, A layout, P presenter) {
 		super(layout);
+		setName(name);
 		this.presenter = presenter;
+		this.name = name;
+		
+		
 	}
 		
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @param name
+	 */
+	@Override
+	public void setName(String name) {		
+		this.name = name;
+		// Workaround to be able to unit-test this class (no application set) 
+		try {
+			setDisplayName(Lang.getMessage(name));	
+		} catch (NullPointerException e) {
+			setDisplayName(name);
+		}
+	}
+	
 	/**
 	 * {@inheritDoc}
 	 */
@@ -46,9 +67,24 @@ public abstract class AbstractModuleView<A extends ComponentContainer, P extends
 	public String getName() {		
 		return name;
 	}
-	
-	public void setName(String name) {
-		this.name = name;
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	/**
+	 * Sets the (translated) display name. If you would 
+	 * normally call the {@link AbstractModuleView#setName(String)} method
+	 * with the untranslated name
+	 * 
+	 * @param displayName
+	 */
+	protected void setDisplayName(String displayName) {
+		this.displayName = displayName;
 	}
 
 	protected P getPresenter() {

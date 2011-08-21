@@ -38,9 +38,8 @@ public class UsersView
 	
 	public UsersView() {		
 		// Common View Settings
-		super(new CustomLayout("SimpleTableFormLayout"), new UsersPresenter());
-		getPresenter().setUi(this);
-		setName(Lang.getMessage("Users"));
+		super("Users", new CustomLayout("SimpleTableFormLayout"), new UsersPresenter());
+		getPresenter().setUi(this);		
 		initLayout();
 		getPresenter().init();
 	

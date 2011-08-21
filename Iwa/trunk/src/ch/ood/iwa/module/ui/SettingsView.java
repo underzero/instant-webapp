@@ -27,9 +27,8 @@ public class SettingsView extends AbstractModuleView<CustomLayout, SettingsPrese
 	private final Form changePasswordForm = new Form();		
 
 	public SettingsView() {
-		super(new CustomLayout("SettingsViewLayout"), new SettingsPresenter());
-		getPresenter().setUi(this);
-		setName(Lang.getMessage("Settings"));
+		super("Settings", new CustomLayout("SettingsViewLayout"), new SettingsPresenter());
+		getPresenter().setUi(this);		
 		initLayout();
 	}
 

@@ -93,11 +93,7 @@ public abstract class TestEntityModel {
 			public void registerView(ModuleView view) {
 				// nop
 			}
-			
-			@Override
-			public Tree getViewNamesAsTree() {
-				return null;
-			}
+						
 			
 			@Override
 			public Set<String> getViewNamesAsSet() {
@@ -126,6 +122,21 @@ public abstract class TestEntityModel {
 			
 			@Override
 			public Set<View> getAllViews() {
+				return null;
+			}
+
+			@Override
+			public Tree getViewDisplayNamesAsTree() {
+				return null;
+			}
+
+			@Override
+			public Set<String> getViewDisplayNamesAsSet() {				
+				return null;
+			}
+
+			@Override
+			public View getViewByDisplayName(String name) {			
 				return null;
 			}
 		};

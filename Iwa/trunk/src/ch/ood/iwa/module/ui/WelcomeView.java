@@ -7,6 +7,7 @@ import ch.ood.iwa.module.presenter.WelcomePresenter;
 
 import com.vaadin.event.MouseEvents.ClickEvent;
 import com.vaadin.terminal.ThemeResource;
+import com.vaadin.ui.Component;
 import com.vaadin.ui.Embedded;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
@@ -22,14 +23,27 @@ public class WelcomeView extends AbstractModuleView<VerticalLayout, WelcomePrese
 	private static final long serialVersionUID = 1L;	
 		
 	public WelcomeView() {
-		super(new VerticalLayout(), new WelcomePresenter());
-		getPresenter().setUi(this);
-		setName(Lang.getMessage("Home"));
+		super("Home", new VerticalLayout(), new WelcomePresenter());
+		getPresenter().setUi(this);		
 		getContent().setSpacing(true);		
 		Embedded e = new Embedded(null, new ThemeResource(IwaApplication.LOGO_FILE_PATH));
 		getContent().addComponent(e);
 		getContent().addComponent(new Label(Lang.getMessage("WelcomeMsg")));
 	}
+	
+	@Override
+	public void addComponent(Component c) {
+		getContent().addComponent(c);
+	}
+		
+	public void addComponentAsFirst(Component c) {
+		getContent().addComponentAsFirst(c);
+	}
+	
+	@Override
+	public void removeComponent(Component c) {
+		getContent().removeComponent(c);
+	}	
 
 	@Override
 	public void activated(Object... params) {

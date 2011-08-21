@@ -24,9 +24,9 @@ public class ApplicationModule extends AbstractModule implements Serializable {
 	public ApplicationModule()  {
 		super("General");
 		
-		// This is the place to add more views	
-		super.registerView(new SettingsView());
+		// This is the place to add more views
 		super.registerView(new WelcomeView());
+		super.registerView(new SettingsView());		
 	}
 
 	@Override
