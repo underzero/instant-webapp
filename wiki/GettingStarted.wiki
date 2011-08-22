@@ -15,7 +15,7 @@ Once the application is running, you can log in using the user "r" with the pass
  * Install Google Plugin (Eclipse Helios Update Site: http://dl.google.com/eclipse/plugin/3.6)
  * Install Vaadin Plugin (Eclipse Update Site: http://vaadin.com/eclipse)
 
-==Preconditions for Apache Tomcat (and Mysql)==
+==Preconditions for Apache Tomcat (and MySQL)==
  * Install Eclipse (Java EE Version)
  * Install Apache Tomcat 6 (http://tomcat.apache.org/download-60.cgi) 
  * Install !MySql (http://www.mysql.com/downloads/mysql/5.5.html#downloads) 
