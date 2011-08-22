@@ -52,6 +52,7 @@ public abstract class IwaApplication extends Application
 	private static final String PROPERTIES_FILE_PATH = "/WEB-INF/iwa.properties";
 	private static final String COOKIE_NAME_IWA_LOCALE = "IWA.LOCALE";
 	private static final String CMD_LINE_PARAMETER_LANG = "lang";
+	private static final String GAE_RUNTIME_ENVIRONMENT_PRPOERTY_KEY = "com.google.appengine.runtime.environment";
 	public static String LOGIN_URI = "Login";
 	private static final Logger logger = Logger.getLogger(IwaApplication.class.getName());
 	private static ThreadLocal<IwaApplication> threadLocal = new ThreadLocal<IwaApplication>();		
@@ -101,6 +102,15 @@ public abstract class IwaApplication extends Application
 	 */
 	public Properties getProperties() {
 		return getInstance().properties;
+	}
+	
+	public boolean isRunningInGAE() {				
+		String runtimeEnvironment = System.getProperty(GAE_RUNTIME_ENVIRONMENT_PRPOERTY_KEY);
+		if (runtimeEnvironment == null) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 	
 	/**

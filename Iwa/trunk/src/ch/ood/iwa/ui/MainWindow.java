@@ -18,6 +18,7 @@ import ch.ood.iwa.module.ui.WelcomeView;
 import com.vaadin.event.ItemClickEvent;
 import com.vaadin.event.ItemClickEvent.ItemClickListener;
 import com.vaadin.event.MouseEvents.ClickListener;
+import com.vaadin.terminal.ExternalResource;
 import com.vaadin.terminal.ThemeResource;
 import com.vaadin.ui.Accordion;
 import com.vaadin.ui.Alignment;
@@ -44,7 +45,8 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
 
 	private static final long serialVersionUID = 1L;	
 	private Label lblCurrentUser = new Label("Logged off...");
-	private Button btnLogout;	
+	private Button btnLogout;
+	private Button btnHelp;
 	private Panel fullScreenLayout = new Panel();
 	private Panel mainLayout = new Panel(new VerticalLayout());	
 	private HorizontalSplitPanel splitPanel = new HorizontalSplitPanel();	
@@ -100,16 +102,13 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
 	@Override
 	public void itemClick(ItemClickEvent event) {	
 		String source = (String) event.getItemId();		
-		if (source.equals("Logout")) {
-			ViewHandler.activateView(LoginView.class);
-		} else {
-			try {
-				View view = IwaApplication.getInstance().getModuleRegistry().getViewByDisplayName(source);
-				ViewHandler.activateView(view.getClass());
-			} catch (IwaException e) {
-				showNotification(e.getMessage(), e.getDetails(), Notification.TYPE_ERROR_MESSAGE);
-			}			
-		}
+		try {
+			View view = IwaApplication.getInstance().getModuleRegistry().getViewByDisplayName(source);
+			ViewHandler.activateView(view.getClass());
+		} catch (IwaException e) {
+			IwaApplication.getInstance().logError(e);
+			showNotification(e.getMessage(), e.getDetails(), Notification.TYPE_ERROR_MESSAGE);
+		}			
 	}
 
 	/**
@@ -117,8 +116,12 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
 	 */
 	@Override
 	public void buttonClick(ClickEvent event) {
-		SessionHandler.logout();
-		ViewHandler.activateView(LoginView.class);
+		if (event.getSource().equals(btnLogout)) {
+			SessionHandler.logout();
+			ViewHandler.activateView(LoginView.class);
+		} else if (event.getSource().equals(btnHelp)) {
+			super.open(new ExternalResource(Lang.getMessage("HelpUrl")), "_blank");						
+		}
 	}
 	
 	/**
@@ -149,7 +152,6 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
         logo.setDescription("Home");
         logo.addListener(new ClickListener() {
 			private static final long serialVersionUID = 1L;
-
 			@Override
 			public void click(com.vaadin.event.MouseEvents.ClickEvent event) {
 				ViewHandler.activateView(WelcomeView.class);				
@@ -169,8 +171,16 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
         btnLogout.addListener(this); 
         panel.getContent().addComponent(btnLogout);
         ((HorizontalLayout)panel.getContent()).setComponentAlignment(btnLogout, Alignment.MIDDLE_RIGHT);
-        ((HorizontalLayout)panel.getContent()).setExpandRatio(btnLogout, 0.1f);               
-        return panel;
+        ((HorizontalLayout)panel.getContent()).setExpandRatio(btnLogout, 0.1f);
+        
+        // Help Button
+        btnHelp = new Button(Lang.getMessage("Help"));
+        btnHelp.setStyleName(BaseTheme.BUTTON_LINK);        
+        btnHelp.addListener(this); 
+        panel.getContent().addComponent(btnHelp);
+        ((HorizontalLayout)panel.getContent()).setComponentAlignment(btnHelp, Alignment.MIDDLE_RIGHT);
+                
+        return panel;                
 	}
 	
 	/**
