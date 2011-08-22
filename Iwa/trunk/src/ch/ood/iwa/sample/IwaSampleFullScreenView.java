@@ -15,8 +15,8 @@ import com.vaadin.ui.VerticalLayout;
  *
  */
 public class IwaSampleFullScreenView 
-				extends AbstractModuleView<VerticalLayout, IwaSamplePresenter, IwaSamplePresenter.UI>
-				implements IwaSamplePresenter.UI, Serializable {
+		  extends AbstractModuleView<VerticalLayout, IwaSamplePresenter, IwaSamplePresenter.UI>
+		  implements IwaSamplePresenter.UI, Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Button btnHello;		
