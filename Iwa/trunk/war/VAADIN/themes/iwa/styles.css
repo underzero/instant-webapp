@@ -24,3 +24,20 @@
 	text-align: right;	
 }
 
+.v-accordion-item {
+	position: relative;
+	zoom: 1;
+	font-size: small;
+}
+.v-accordion-item-caption {
+	overflow: hidden;
+	white-space: nowrap;
+	background: #eee;
+	border-bottom: 2px solid #ddd;
+	
+}
+.v-accordion-item-caption .v-caption {
+	cursor: pointer;
+	font-size: small;
+}
+
