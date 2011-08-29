@@ -2,6 +2,10 @@
 
 <wiki:toc max_depth="3" />
 
+==Add a new language==
+ * Add the new ISO-639-1 (two letter) language code to /war/WEB-INF/iwa.properties
+ * Add the texts to /war/WEB-INF/translations.xml
+
 ==Customize my IWA based application==
 General settings live in /war/WEB-INF/iwa.properties
 
