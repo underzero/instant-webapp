@@ -10,7 +10,7 @@ import org.vaadin.appfoundation.persistence.facade.FacadeFactory;
  * @author Mischa
  *
  */
-public class TestEntityModelAgainstMySql extends TestEntityModel {
+public class TestIwaEntityModelAgainstMySql extends TestIwaEntityModel {
 	
 	public static String persistenceUnitName = "default";
 		
