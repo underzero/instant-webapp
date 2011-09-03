@@ -14,7 +14,7 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-    TestEntityModelAgainstGAE.class})
+    TestIwaEntityModelAgainstGAE.class})
 public class RunAllGaeSpecificTests {
 
 	public static Test suite() {
