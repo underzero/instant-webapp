@@ -13,7 +13,7 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({    
-    TestEntityModelAgainstMySql.class})
+    TestIwaEntityModelAgainstMySql.class})
 public class RunAllRdbmsSpecificTests {
 
 	public static Test suite() {
