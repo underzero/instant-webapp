@@ -28,7 +28,7 @@ import com.vaadin.ui.Tree;
  * @author Mischa
  *
  */
-public abstract class TestEntityModel {
+public abstract class TestIwaEntityModel {
 	
 	public final static String TEST_EMAIL_ADDRESS_1 = "testrecipient1@ood.ch";
 	public final static String TEST_FIRST_NAME = "Honk";
