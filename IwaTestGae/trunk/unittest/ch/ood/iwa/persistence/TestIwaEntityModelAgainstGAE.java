@@ -12,7 +12,7 @@ import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
  * @author Mischa
  *
  */
-public class TestEntityModelAgainstGAE extends TestEntityModel {
+public class TestIwaEntityModelAgainstGAE extends TestIwaEntityModel {
 	
 	private static LocalServiceTestHelper googleAppEngineTestHelper;
 
