@@ -503,7 +503,7 @@
 				<seg>The email address "{0}" is not a valid email adress</seg>
 			</tuv>
 			<tuv lang="de">
-				<seg>Die E-Mail Adresse "{0} ist ungültig"</seg>
+				<seg>Die E-Mail Adresse "{0}" ist ungültig</seg>
 			</tuv>
 		</tu>				
 		<tu tuid="LoginFailedMsg">
