@@ -14,10 +14,10 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({    
     TestIwaEntityModelAgainstMySql.class})
-public class RunAllRdbmsSpecificTests {
+public class RunAllIwaRdbmsSpecificTests {
 
 	public static Test suite() {
-		TestSuite suite = new TestSuite(RunAllRdbmsSpecificTests.class.getName());
+		TestSuite suite = new TestSuite(RunAllIwaRdbmsSpecificTests.class.getName());
 		return suite;
 	}
 }
