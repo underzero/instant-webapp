@@ -25,7 +25,7 @@ Once the application is running, you can log in using the user "r" with the pass
 
 <br/>
 = Detailed Guide =
-Find a more detailed guide on how to setup IWA projects [http://instant-webapp.googlecode.com/svn/wiki/IwaDevelopersGuide.pdf here]
+Find a more detailed guide on how to setup IWA projects [http://instant-webapp.googlecode.com/svn/Iwa/trunk/doc/developersguide/IwaDevelopersGuide.pdf here]
 
 = Appfoundation Doumentation=
 As IWA is based on [http://code.google.com/p/vaadin-appfoundation/w/list appfoundation], you might want also to consult the according documentation.
