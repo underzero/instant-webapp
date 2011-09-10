@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!--	
+	VEMICO Build File
+	
+	Currently only contains targets for running JUnit Test
+	and Test Reports	
+	
+	21.08.2011 Mischa Christen 	
+-->
+<project name="RunUnitTests" default="junitreport" basedir="..">
+
+	<property name="src.dir.iwa" location="../Iwa/unittest" />
+	<property name="src.dir.iwa.test" location="unittest" />
+	<property name="src.dir.iwa.test.tomcat" location="../IwaTestTomcat/unittest" />
+	<property name="test.report.dir" location="doc/test/junitreport" />
+
+	<path id="junit.class.path">
+		<pathelement location="lib-dev/junit-4.8.1.jar" />
+		<fileset dir="war/WEB-INF/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="lib-dev">
+			<include name="**/*.jar"/>
+		</fileset>		
+		
+		<pathelement location="${eclipse.home}\plugins\com.google.appengine.eclipse.sdkbundle_1.5.2.r36v201107211953\appengine-java-sdk-1.5.2\lib\user\orm\jdo2-api-2.3-eb.jar" />
+		<fileset dir="${eclipse.home}\plugins\com.google.appengine.eclipse.sdkbundle_1.5.2.r36v201107211953\appengine-java-sdk-1.5.2\lib\impl">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${eclipse.home}\plugins\com.google.appengine.eclipse.sdkbundle_1.5.2.r36v201107211953\appengine-java-sdk-1.5.2\lib\testing">
+			<include name="**/*.jar"/>
+		</fileset>
+		<pathelement location="../Iwa/war/WEB-INF/classes" />
+		<pathelement location="war/WEB-INF/classes" />		
+	</path>
+
+	<path id="junit.class.path.tomcat">
+		<pathelement location="lib-dev/junit-4.8.1.jar" />		
+		<fileset dir="../IwaTestTomcat/WebContent/WEB-INF/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		
+		<fileset dir="${eclipse.home}\configuration\com.vaadin.integration.eclipse\download">
+			<include name="**/*.jar"/>
+		</fileset>
+				
+		<pathelement location="../Iwa/war/WEB-INF/classes" />
+		<pathelement location="../IwaTestTomcat/WebContent/WEB-INF/classes" />
+	</path>
+
+	<target name="clean">
+		<delete dir="${test.report.dir}" failonerror="false"/>
+	</target>
+
+	<target name="makedir">
+		<mkdir dir="${test.report.dir}/raw" />
+	</target>
+
+	<target name="junit" depends="clean, makedir">
+		<junit printsummary="on" fork="true" haltonfailure="yes">
+			<classpath refid="junit.class.path" />
+			<formatter type="xml" />
+			<batchtest todir="${test.report.dir}/raw">
+				<fileset dir="${src.dir.iwa.test}">
+					<include name="**/*Test*.java"/>					
+					<exclude name="**/RunAllIwaGaeSpecificTests.java"/>
+				</fileset>
+				<fileset dir="${src.dir.iwa}">
+					<include name="**/*Test*.java"/>
+					<exclude name="**/TestIwaEntityModel.java"/>					
+				</fileset>				
+			</batchtest>
+		</junit>
+	</target>
+
+	<target name="junit_tomcat" depends="junit">
+		<junit printsummary="on" fork="true" haltonfailure="yes">
+			<classpath refid="junit.class.path.tomcat" />
+			<formatter type="xml" />
+			<batchtest todir="${test.report.dir}/raw">
+				<fileset dir="${src.dir.iwa.test.tomcat}">
+					<include name="**/*Test*.java"/>					
+					<exclude name="**/RunAllIwaRdbmsSpecificTests.java"/>
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+
+	<target name="junitreport" depends="junit_tomcat">
+		<junitreport todir="${test.report.dir}">
+			<fileset dir="${test.report.dir}/raw">
+				<include name="TEST-*.xml"/>
+			</fileset>
+			<report format="frames" todir="${test.report.dir}\html\"/>
+		</junitreport>
+	</target>
+</project>
