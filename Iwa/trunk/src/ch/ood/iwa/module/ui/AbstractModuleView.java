@@ -40,9 +40,7 @@ public abstract class AbstractModuleView<A extends ComponentContainer, P extends
 		super(layout);
 		setName(name);
 		this.presenter = presenter;
-		this.name = name;
-		
-		
+		this.name = name;				
 	}
 		
 	/**
@@ -138,6 +136,7 @@ public abstract class AbstractModuleView<A extends ComponentContainer, P extends
 	 */
 	@Override
 	public void deactivated(Object... params) {
+	
 	}
 
 	/**

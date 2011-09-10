@@ -138,7 +138,7 @@ public abstract class IwaApplication extends Application
 		initializeFullScreenViews();
 		registerFullScreenView(LoginView.class, LOGIN_URI);
 		((MainWindow)getMainWindow()).refresh();
-		writeLocalToCookie(newLocale);
+		writeLocaleToCookie(newLocale);
 	}
 	
 	@Override
@@ -223,6 +223,10 @@ public abstract class IwaApplication extends Application
 		initializeModules();
 
 		Window mainWindow = new MainWindow();
+		
+		// Set the Window Title
+		mainWindow.setCaption(createMainWindowTitle());
+		
 		mainWindow.addParameterHandler(this);
 		setMainWindow(mainWindow);
 
@@ -236,7 +240,11 @@ public abstract class IwaApplication extends Application
 		ViewHandler.activateView(LoginView.class);
 	}
 	
-
+	private String createMainWindowTitle() {
+		return getProperties().getProperty("iwa.app.name") + " " + getProperties().getProperty("iwa.app.version")  
+		+ " (" + getProperties().getProperty("iwa.environment") + ")";
+	}
+	
 	/**
 	 * This is a global error catcher to avoid having Stack Traces Pop Ups
 	 * on Visual Components 
@@ -422,8 +430,10 @@ public abstract class IwaApplication extends Application
 	 * 
 	 * @param locale
 	 */
-	private void writeLocalToCookie(Locale locale) {
+	private void writeLocaleToCookie(Locale locale) {
 		Cookie cookie = new Cookie(COOKIE_NAME_IWA_LOCALE, locale.getLanguage());
+		// Schedule the cookie expiration in one year
+		cookie.setMaxAge(60 * 60 * 24 * 7 * 4 * 12);
 		response.addCookie(cookie);
 	}
 	
