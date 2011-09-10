@@ -30,6 +30,8 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
+import com.vaadin.ui.TabSheet.SelectedTabChangeEvent;
+import com.vaadin.ui.TabSheet.SelectedTabChangeListener;
 import com.vaadin.ui.Tree;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Window;
@@ -53,27 +55,27 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
 	private MainArea mainArea  = new MainArea();
 	private Accordion menu  = new Accordion();	
 	private View currentView;
+	private Tree tree = new Tree(); 
 
+	/**
+	 * On selection of a Tab
+	 */
+	private SelectedTabChangeListener selectedTabChangeListener = new SelectedTabChangeListener() {
+		private static final long serialVersionUID = 1L;
+		
+		@Override
+		public void selectedTabChange(SelectedTabChangeEvent event) {			
+			// unselect. TODO: find a way to clear the current selection
+		}
+	}; 
+	
 	/**
 	 * Default Constructor
 	 */
 	public MainWindow() {
 		initLayout();
 	}
-	
-	private void initLayout() {
-		splitPanel.setSplitPosition(250, HorizontalSplitPanel.UNITS_PIXELS);
-		splitPanel.addComponent(menu);
-		splitPanel.addComponent(mainArea);
 		
-		mainLayout.getContent().addComponent(getHeaderPanel());
-		mainLayout.getContent().addComponent(splitPanel);
-		
-		((VerticalLayout)mainLayout.getContent()).setExpandRatio(splitPanel, 5);
-		
-		splitPanel.setSizeFull();
-	}
-	
 	@Override
 	public void activate(View view) {
 		
@@ -93,12 +95,16 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
 			mainArea.activate(view);	
 		}
 	}
-
+	
+	private void initListeners() {
+		menu.addListener(selectedTabChangeListener);
+	}
+	
 	@Override
 	public void deactivate(View view) {
 		mainArea.deactivate(view);
 	}
-
+	
 	@Override
 	public void itemClick(ItemClickEvent event) {	
 		String source = (String) event.getItemId();		
@@ -112,18 +118,88 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
 	}
 
 	/**
-	 * This is the logout button
+	 * Initializes the Navigation Main Menu
+	 */
+	public void initializeNavigation() {
+		// Guard
+		if (SessionHandler.get() == null) {
+			return;
+		}		
+		// Clean up first
+		menu.removeAllComponents();
+		
+		// Go through all modules 				
+		for (Module module : IwaApplication.getInstance().getModuleRegistry().getAllModules()) {					
+			// Only add this module if current user has the according permissions
+			if (new ModulePermissionManager().hasPermission(SessionHandler.get().getRole(), module)) {
+				Tree tree = module.getViewDisplayNamesAsTree();
+				tree.addListener(this);
+				menu.addTab(tree, module.getDisplayName(), module.getIcon());
+				// register all views of this module
+				for (View view : module.getAllViews()) {
+					ViewHandler.addView(view.getClass(), this);
+				}				
+			}			
+		}
+	}
+	
+	/**
+	 * Synchronizes the navigation menu with the given view 
+	 *  
+	 * @param viewName
+	 */
+	public void synchronizeNavigation(String viewName) {
+		ModuleRegistry moduleRegistry = IwaApplication.getInstance().getModuleRegistry();		
+		for (Module module : moduleRegistry.getAllModules()) {			
+			ModuleView view = (ModuleView)module.getViewByName(viewName);			
+			if (view != null) {			
+				String viewDisplayName = view.getDisplayName();			
+				tree = module.getViewDisplayNamesAsTree();								
+				menu.setSelectedTab(tree);
+
+				/**
+				 * if already selected, do nothing (prevents selection hopping)
+				 * TODO: does not quite work....
+				 */				
+				if (menu.getSelectedTab().equals(tree)) {
+					return;
+				}
+//				if (tree.isSelected(viewDisplayName)) {
+//					return;			
+//				}
+				tree.select(viewDisplayName);
+			}					
+		}
+	}
+	
+	/**
+	 * Refreshes the whole view.<br/>
+	 * This is useful for example when an Locale change has taken place
+	 * 
+	 */
+	public void refresh() {
+		if (SessionHandler.get() != null) {
+			setCurrentUser(SessionHandler.get().getName());
+		}
+		btnLogout.setCaption("(" + Lang.getMessage("Logout") + ")");
+		initializeNavigation();
+		ViewHandler.activateView(currentView.getClass());
+	}
+	
+	/**
+	 * Listens to the logout button
 	 */
 	@Override
 	public void buttonClick(ClickEvent event) {
 		if (event.getSource().equals(btnLogout)) {
 			SessionHandler.logout();
 			ViewHandler.activateView(LoginView.class);
+			
 		} else if (event.getSource().equals(btnHelp)) {
 			super.open(new ExternalResource(Lang.getMessage("HelpUrl")), "_blank");						
 		}
 	}
-	
+
 	/**
 	 * Set the current user to display it in the header panel
 	 * 
@@ -132,7 +208,23 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
 	public void setCurrentUser(String currentUser) {
 		lblCurrentUser.setValue(Lang.getMessage("LoggedInAs", currentUser));
 	}
+	
+	private void initLayout() {
+		splitPanel.setSplitPosition(250, HorizontalSplitPanel.UNITS_PIXELS);
+		splitPanel.addComponent(menu);
+		splitPanel.addComponent(mainArea);
 		
+		mainLayout.getContent().addComponent(getHeaderPanel());
+		mainLayout.getContent().addComponent(splitPanel);
+		
+		((VerticalLayout)mainLayout.getContent()).setExpandRatio(splitPanel, 5);
+		
+		splitPanel.setSizeFull();
+		
+		// Init some additional listeners
+		initListeners();
+	}
+	
 	/**
 	 * Produces the header panel
 	 * 
@@ -183,62 +275,5 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
         return panel;                
 	}
 	
-	/**
-	 * Initializes the Navigation Main Menu
-	 */
-	public void initializeNavigation() {
-		// Guard
-		if (SessionHandler.get() == null) {
-			return;
-		}		
-		// Clean up first
-		menu.removeAllComponents();
-		
-		// Go through all modules 				
-		for (Module module : IwaApplication.getInstance().getModuleRegistry().getAllModules()) {					
-			// Only add this module if current user has the according permissions
-			if (new ModulePermissionManager().hasPermission(SessionHandler.get().getRole(), module)) {
-				Tree tree = module.getViewDisplayNamesAsTree();
-				tree.addListener(this);
-				menu.addTab(tree, module.getDisplayName(), module.getIcon());
-				// register all views of this module
-				for (View view : module.getAllViews()) {
-					ViewHandler.addView(view.getClass(), this);
-				}				
-			}			
-		}
-	}
-	
-	/**
-	 * Synchronizes the navigation menu with the given view 
-	 *  
-	 * @param viewName
-	 */
-	public void synchronizeNavigation(String viewName) {
-		ModuleRegistry moduleRegistry = IwaApplication.getInstance().getModuleRegistry();		
-		for (Module module : moduleRegistry.getAllModules()) {			
-			ModuleView view = (ModuleView)module.getViewByName(viewName);			
-			if (view != null) {			
-				String viewDisplayName = view.getDisplayName();			
-				Tree tree = module.getViewDisplayNamesAsTree();			
-				menu.setSelectedTab(tree);
-				tree.select(viewDisplayName);
-			}					
-		}
-	}
-	
-	/**
-	 * Refreshes the whole view.<br/>
-	 * This is useful for example when an Locale change has taken place
-	 * 
-	 */
-	public void refresh() {
-		if (SessionHandler.get() != null) {
-			setCurrentUser(SessionHandler.get().getName());
-		}
-		btnLogout.setCaption("(" + Lang.getMessage("Logout") + ")");
-		initializeNavigation();
-		ViewHandler.activateView(currentView.getClass());
-	}
 }
 
