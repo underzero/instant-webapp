@@ -8,6 +8,17 @@ import com.google.appengine.tools.development.testing.LocalDatastoreServiceTestC
 import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
 
 /**
+ * Integration Test for the entity model
+ * <br/>
+ * Make shure this is run with the correct libraries in the class path.
+ * <ul>
+ * <li>GAE Library (project classpath)</li>
+ * <li>${GOOGLE_APPENGINE_SDK_ROOT}/lib/testing/appengine-testing.jar</li>
+ * <li>${GOOGLE_APPENGINE_SDK_ROOT}/lib/impl/appengine-api-stubs.jar</li>
+ * <li>${GOOGLE_APPENGINE_SDK_ROOT}/lib/impl/appengine-api.jar</li>
+ * <li>${GOOGLE_APPENGINE_SDK_ROOT}/lib/impl/appengine-local-runtime.jar</li>
+ * <li>${GOOGLE_APPENGINE_SDK_ROOT}/lib/impl/appengine-api-labs.jar</li>
+ * <ul>
  * 
  * @author Mischa
  *
