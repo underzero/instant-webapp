@@ -232,13 +232,14 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
 	 */
 	private Panel getHeaderPanel() {
         Panel panel = new Panel(new HorizontalLayout());
-        panel.setHeight("130px"); 
+        panel.setHeight("110px"); 
         ((HorizontalLayout)panel.getContent()).setSpacing(true);
-        ((HorizontalLayout)panel.getContent()).setMargin(true, true, false, true);
+        ((HorizontalLayout)panel.getContent()).setMargin(false, true, false, true);
         ((HorizontalLayout)panel.getContent()).setWidth("100%");
         
         // Logo
         Embedded logo = new Embedded(null, new ThemeResource(IwaApplication.LOGO_FILE_PATH));
+        
         panel.getContent().addComponent(logo);
         // Add a "Home" - Link to the image
         logo.setDescription("Home");
