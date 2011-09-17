@@ -87,8 +87,6 @@ public class UserFormFieldFactory extends DefaultFieldFactory implements Seriali
 		comboBox = new ComboBox(fieldName);
 		comboBox.setNullSelectionAllowed(false);
 		
-		// TODO: View component should not read DB....
-		// But maybe the FormFieldFactoy should be considered beeing part of the presenter...? 
 		List<Role> roles = FacadeFactory.getFacade().list(Role.class);
 		
 		if (roles == null) return null;
@@ -96,7 +94,7 @@ public class UserFormFieldFactory extends DefaultFieldFactory implements Seriali
 		for (Role role : roles) {
 			comboBox.addItem(role.getIdentifier());
 			/**
-			 * Here is the hook to introduce i18n for the Role display name.
+			 * Here would be the hook to introduce i18n for the Role display name.
 			 * But this would require some smart updating of the i18n texts file to be 
 			 * a proper solution... 
 			 */				

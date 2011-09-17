@@ -58,10 +58,6 @@ public class SettingsPresenter extends AbstractModulePresenter<SettingsPresenter
 		}
 	}
 
-	public void setPasswordBean(PasswordBackingBean passwordBean) {
-		this.passwordBean = passwordBean;
-	}
-
 	public PasswordBackingBean getPasswordBean() {
 		return passwordBean;
 	}
