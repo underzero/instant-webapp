@@ -1,0 +1,69 @@
+17.09.2011 14:45:52 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+INFO: Bundle "org.datanucleus.jpa" has an optional dependency to "org.datanucleus.enhancer" but it cannot be resolved
+17.09.2011 14:45:52 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+INFO: Bundle "org.datanucleus" has an optional dependency to "org.eclipse.equinox.registry" but it cannot be resolved
+17.09.2011 14:45:52 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+INFO: Bundle "org.datanucleus" has an optional dependency to "org.eclipse.core.runtime" but it cannot be resolved
+17.09.2011 14:45:53 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+INFO: Bundle "org.datanucleus.jpa" has an optional dependency to "org.datanucleus.enhancer" but it cannot be resolved
+17.09.2011 14:45:53 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+INFO: Bundle "org.datanucleus" has an optional dependency to "org.eclipse.equinox.registry" but it cannot be resolved
+17.09.2011 14:45:53 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+INFO: Bundle "org.datanucleus" has an optional dependency to "org.eclipse.core.runtime" but it cannot be resolved
+17.09.2011 14:45:53 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
+INFO: ================= Persistence Configuration ===============
+17.09.2011 14:45:53 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
+INFO: DataNucleus Persistence Factory - Vendor: "DataNucleus"  Version: "1.1.5"
+17.09.2011 14:45:53 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
+INFO: DataNucleus Persistence Factory initialised for datastore URL="jdbc:mysql://localhost:3306/iwa" driver="com.mysql.jdbc.Driver" userName="iwa"
+17.09.2011 14:45:53 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
+INFO: ===========================================================
+17.09.2011 14:45:53 org.datanucleus.store.rdbms.table.AbstractTable create
+INFO: Creating table `DELETEME1316263553461`
+17.09.2011 14:45:53 org.datanucleus.store.rdbms.table.ProbeTable findSchemaDetails
+INFO: Schema Name could not be determined for this datastore
+17.09.2011 14:45:53 org.datanucleus.store.rdbms.table.AbstractTable drop
+INFO: Dropping table `DELETEME1316263553461`
+17.09.2011 14:45:53 org.datanucleus.store.rdbms.RDBMSManager initialiseSchema
+INFO: Initialising Catalog "iwa", Schema "" using "None" auto-start option
+17.09.2011 14:45:53 org.datanucleus.store.rdbms.RDBMSManager initialiseSchema
+INFO: Catalog "iwa", Schema "" initialised - managing 0 classes
+17.09.2011 14:45:53 org.datanucleus.metadata.xml.AbstractMetaDataHandler error
+WARNUNG: MetaData Parser encountered an error in file "file:/C:/workspaces/workspaceVemico/IwaTestTomcat/WebContent/WEB-INF/classes/META-INF/orm.xml" at line 4, column 117 : cvc-complex-type.3.1: Value '1.0' of attribute 'version' of element 'entity-mappings' is not valid with respect to the corresponding attribute use. Attribute 'version' has a fixed value of '2.0'. - Please check your specification of DTD and the validity of the MetaData XML that you have specified.
+17.09.2011 14:45:53 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
+INFO: Class "org.vaadin.appfoundation.authorization.jpa.PermissionEntity" has been specified with JPA annotations so using those.
+17.09.2011 14:45:53 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
+INFO: Class "org.vaadin.appfoundation.authorization.Role" has been specified with JPA annotations so using those.
+17.09.2011 14:45:53 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
+INFO: Class "org.vaadin.appfoundation.authentication.data.User" has been specified with JPA annotations so using those.
+17.09.2011 14:45:53 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
+INFO: Class "ch.ood.iwa.authorization.ModulePermission" has been specified with JPA annotations so using those.
+17.09.2011 14:45:53 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
+INFO: Class "org.vaadin.appfoundation.persistence.data.AbstractPojo" has been specified with JPA annotations so using those.
+17.09.2011 14:45:53 org.datanucleus.store.StoreDataManager registerStoreData
+INFO: Managing Persistence of Class : org.vaadin.appfoundation.persistence.data.AbstractPojo [Table : (none), InheritanceStrategy : subclass-table]
+17.09.2011 14:45:53 org.datanucleus.store.StoreDataManager registerStoreData
+INFO: Managing Persistence of Class : org.vaadin.appfoundation.authentication.data.User [Table : `APPUSER`, InheritanceStrategy : new-table]
+17.09.2011 14:45:53 org.datanucleus.store.rdbms.table.TableImpl validateIndices
+INFO: Validating 2 index(es) for table `APPUSER`
+17.09.2011 14:45:53 org.datanucleus.store.rdbms.table.TableImpl validateForeignKeys
+INFO: Validating 0 foreign key(s) for table `APPUSER`
+17.09.2011 14:45:53 org.datanucleus.store.rdbms.table.TableImpl validateCandidateKeys
+INFO: Validating 2 unique key(s) for table `APPUSER`
+17.09.2011 14:45:54 org.datanucleus.store.StoreDataManager registerStoreData
+INFO: Managing Persistence of Class : org.vaadin.appfoundation.authorization.Role [Table : `ROLE`, InheritanceStrategy : new-table]
+17.09.2011 14:45:54 org.datanucleus.store.rdbms.table.TableImpl validateIndices
+INFO: Validating 2 index(es) for table `ROLE`
+17.09.2011 14:45:54 org.datanucleus.store.rdbms.table.TableImpl validateForeignKeys
+INFO: Validating 1 foreign key(s) for table `ROLE`
+17.09.2011 14:45:54 org.datanucleus.store.rdbms.table.TableImpl validateCandidateKeys
+INFO: Validating 1 unique key(s) for table `ROLE`
+17.09.2011 14:45:54 org.datanucleus.store.StoreDataManager registerStoreData
+INFO: Managing Persistence of Class : ch.ood.iwa.authorization.ModulePermission [Table : `MODULEPERMISSION`, InheritanceStrategy : new-table]
+17.09.2011 14:45:54 org.datanucleus.store.rdbms.table.TableImpl validateIndices
+INFO: Validating 1 index(es) for table `MODULEPERMISSION`
+17.09.2011 14:45:54 org.datanucleus.store.rdbms.table.TableImpl validateForeignKeys
+INFO: Validating 0 foreign key(s) for table `MODULEPERMISSION`
+17.09.2011 14:45:54 org.datanucleus.store.rdbms.table.TableImpl validateCandidateKeys
+INFO: Validating 1 unique key(s) for table `MODULEPERMISSION`
+
