@@ -16,6 +16,7 @@
 
 	<path id="junit.class.path">
 		<pathelement location="lib-dev/junit-4.8.1.jar" />
+		<pathelement location="../Iwa/lib-dev/easymock-2.5.2.jar" />
 		<fileset dir="war/WEB-INF/lib">
 			<include name="**/*.jar"/>
 		</fileset>
