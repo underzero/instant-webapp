@@ -129,7 +129,7 @@ public class UsersPresenter extends AbstractModulePresenter<UsersPresenter.UI> i
 		getUi().getForm().setVisibleItemProperties(UserFormFieldFactory.getVisibleFields());		
 	}
 	
-	private void handleNewButtonClicked() {
+	void handleNewButtonClicked() {
 		// Unselect table
 		getUi().getTable().select(getUi().getTable().getNullSelectionItemId());
 		
@@ -142,11 +142,11 @@ public class UsersPresenter extends AbstractModulePresenter<UsersPresenter.UI> i
 		getUi().getBtnSave().setEnabled(true);
 	}
 	
-	private void handleDeleteButtonClicked() {
+	void handleDeleteButtonClicked() {
 		getUi().showConfirmation("", Lang.getMessage("ConfirmDeleteMsg"), new ConfirmDeleteUserDialogListener());
 	}
 	
-	private void deleteUser() {			
+	void deleteUser() {			
 		// Cache the current items neighbours
 		User selectedUser = getSelectedUser();
 		
@@ -174,7 +174,7 @@ public class UsersPresenter extends AbstractModulePresenter<UsersPresenter.UI> i
 		}				
 	}	
 	
-	private void handleSaveButtonClicked() {
+	void handleSaveButtonClicked() {
 		getUi().getForm().commit();		
 		@SuppressWarnings("unchecked")
 		BeanItem<User> userBeanItem = (BeanItem<User>) getUi().getForm().getItemDataSource();
@@ -270,9 +270,10 @@ public class UsersPresenter extends AbstractModulePresenter<UsersPresenter.UI> i
 	}
 	
 	/**
-	 * Little helper, can not be implemented anonymously for GAE requires it to be Serializable 
+	 * Little helper, can not be implemented anonymously for GAE requires it to be Serializable.
+	 * It is default scoped for test reasons.
 	 */
-	private class ConfirmDeleteUserDialogListener implements ConfirmDialog.Listener, Serializable {
+	public class ConfirmDeleteUserDialogListener implements ConfirmDialog.Listener, Serializable {
 		private static final long serialVersionUID = 1L;
 		@Override
 		public void onClose(ConfirmDialog dialog) {
