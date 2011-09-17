@@ -46,7 +46,8 @@ import com.vaadin.ui.themes.BaseTheme;
 public class MainWindow extends Window implements ViewContainer, ItemClickListener, Button.ClickListener {
 
 	private static final long serialVersionUID = 1L;	
-	private Label lblCurrentUser = new Label("Logged off...");
+	// should never be displayed, so no need to translate
+	private Label lblCurrentUser = new Label("Logged off..."); 
 	private Button btnLogout;
 	private Button btnHelp;
 	private Panel fullScreenLayout = new Panel();
@@ -156,7 +157,6 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
 				String viewDisplayName = view.getDisplayName();			
 				tree = module.getViewDisplayNamesAsTree();								
 				menu.setSelectedTab(tree);
-
 				/**
 				 * if already selected, do nothing (prevents selection hopping)
 				 * TODO: does not quite work....
@@ -164,9 +164,6 @@ public class MainWindow extends Window implements ViewContainer, ItemClickListen
 				if (menu.getSelectedTab().equals(tree)) {
 					return;
 				}
-//				if (tree.isSelected(viewDisplayName)) {
-//					return;			
-//				}
 				tree.select(viewDisplayName);
 			}					
 		}

@@ -66,8 +66,6 @@ public class RoleFormFieldFactory extends DefaultFieldFactory implements Seriali
 		comboBox.setInputPrompt(Lang.getMessage("EnterNewRoleMsg"));
 		comboBox.setNullSelectionAllowed(false);
 		
-		// TODO: View component should not read DB....
-		// But maybe the FormFieldFactoy should be considered beeing part of the presenter...? 
 		List<Role> roles = FacadeFactory.getFacade().list(Role.class);
 		
 		if (roles == null) return null;

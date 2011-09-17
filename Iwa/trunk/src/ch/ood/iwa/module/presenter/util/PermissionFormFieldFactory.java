@@ -67,9 +67,7 @@ public class PermissionFormFieldFactory extends DefaultFieldFactory implements S
 		comboBoxRoles.setRequired(true);
 		comboBoxRoles.setRequiredError(Lang.getMessage("ValueRequiredMsg", fieldName));
 		comboBoxRoles.setNullSelectionAllowed(false);
-		
-		// TODO: View component should not read DB....
-		// But maybe the FormFieldFactoy should be considered beeing part of the presenter...? 
+		 
 		List<Role> roles = FacadeFactory.getFacade().list(Role.class);
 		
 		if (roles == null) return null;

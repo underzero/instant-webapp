@@ -1,6 +1,3 @@
-/**
- * 
- */
 package ch.ood.iwa.module.presenter.util;
 
 import org.vaadin.appfoundation.i18n.Lang;
@@ -10,7 +7,9 @@ import ch.ood.iwa.IwaUtil;
 import com.vaadin.data.Validator;
 
 /**
- * Vaadin Form Validator
+ * Vaadin Form Validator. There is an email validator 
+ * in the Vaadin Framework existing, this is to demonstrate
+ * how to implement an own validator
  * 
  * @author Mischa
  *
