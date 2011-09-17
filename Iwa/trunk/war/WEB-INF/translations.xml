@@ -466,6 +466,14 @@
 				<seg>Bitte versuchen Sie es später oder kontaktieren Sie den System Administrator</seg>
 			</tuv>
 		</tu>		
+		<tu tuid="ConfirmDeleteMsg">
+			<tuv lang="en">
+				<seg>Do you really want to delete this entry?</seg>
+			</tuv>
+			<tuv lang="de">
+				<seg>Wollen Sie den Eintrag wirklich löschen?</seg>
+			</tuv>
+		</tu>					
 		<tu tuid="DuplicateEntryMsg">
 			<tuv lang="en">
 				<seg>There is already an entry with the same value in the field "{0}"</seg>
