@@ -1,6 +1,7 @@
 package ch.ood.iwa.module.presenter;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 
 import org.vaadin.appfoundation.authentication.data.User;
@@ -174,11 +175,17 @@ public class PermissionsPresenter extends AbstractModulePresenter<PermissionsPre
 		getUi().getForm().commit();		
 		@SuppressWarnings("unchecked")
 		BeanItem<ModulePermission> permissionBeanItem = (BeanItem<ModulePermission>) getUi().getForm().getItemDataSource();
-		ModulePermission permission = permissionBeanItem.getBean();		
-	
-		FacadeFactory.getFacade().store(permission);
+		ModulePermission permission = permissionBeanItem.getBean();
 		
-		updateTable(permission);
+		// Check for duplicates as Unique Keys seem not work properly in GAE		
+		Collection<ModulePermission> existingPermissions = getPermissionsContainer().getItemIds();		
+		for (ModulePermission existingPermission : existingPermissions) {
+			if (existingPermission.equals(permission)) {
+				return;
+			}
+		}	
+		FacadeFactory.getFacade().store(permission);		
+		updateTable(permission);	
 	}	
 		
 	private void handleDeleteRoleButtonClicked() {
