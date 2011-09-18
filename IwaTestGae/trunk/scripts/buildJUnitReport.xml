@@ -52,8 +52,7 @@
 	<target name="clean">
 		<delete dir="${test.report.dir}" failonerror="false">
 			<exclude name="**/.svn"/>
-		</delete>
-		
+		</delete>		
 	</target>
 
 	<target name="makedir">
