@@ -10,11 +10,11 @@
 <project name="RunUnitTests" default="junitreport" basedir="..">
 
 	<property name="src.dir.iwa" location="../Iwa/unittest" />
-	<property name="src.dir.iwa.test" location="unittest" />
+	<property name="src.dir.iwa.test.gae" location="unittest" />
 	<property name="src.dir.iwa.test.tomcat" location="../IwaTestTomcat/unittest" />
 	<property name="test.report.dir" location="doc/test/junitreport" />
 
-	<path id="junit.class.path">
+	<path id="junit.class.path.gae">
 		<pathelement location="lib-dev/junit-4.8.1.jar" />
 		<pathelement location="../Iwa/lib-dev/easymock-2.5.2.jar" />
 		<fileset dir="war/WEB-INF/lib">
@@ -62,10 +62,10 @@
 
 	<target name="junit" depends="clean, makedir">
 		<junit printsummary="on" fork="true" haltonfailure="yes">
-			<classpath refid="junit.class.path" />
+			<classpath refid="junit.class.path.gae" />
 			<formatter type="xml" />
 			<batchtest todir="${test.report.dir}/raw">
-				<fileset dir="${src.dir.iwa.test}">
+				<fileset dir="${src.dir.iwa.test.gae}">
 					<include name="**/*Test*.java"/>					
 					<exclude name="**/RunAllIwaGaeSpecificTests.java"/>
 				</fileset>
