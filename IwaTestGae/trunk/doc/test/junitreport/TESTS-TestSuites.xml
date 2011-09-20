@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="W510" id="0" name="PasswordGeneratorTest" package="ch.ood.iwa" tests="2" time="0.059" timestamp="2011-09-18T13:08:18">
+  <testsuite errors="0" failures="0" hostname="W510" id="0" name="PasswordGeneratorTest" package="ch.ood.iwa" tests="2" time="0.062" timestamp="2011-09-18T13:20:55">
       <properties>
           <property name="java.vendor" value="Sun Microsystems Inc." />
 
@@ -27,6 +27,8 @@
           <property name="osgi.ws" value="win32" />
 
           <property name="sun.desktop" value="windows" />
+
+          <property name="src.dir.iwa.test.gae" value="C:\workspaces\workspaceVemico\IwaTestGae\unittest" />
 
           <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
 
@@ -180,11 +182,9 @@
 
           <property name="ant.version" value="Apache Ant version 1.7.1 compiled on June 27 2008" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ch.ood.iwa.PasswordGeneratorTest filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\workspaces\workspaceVemico\IwaTestGae\doc\test\junitreport\raw\TEST-ch.ood.iwa.PasswordGeneratorTest.xml crashfile=C:\workspaces\workspaceVemico\IwaTestGae\junitvmwatcher8689123809352897656.properties propsfile=C:\workspaces\workspaceVemico\IwaTestGae\junit1286073314402632007.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ch.ood.iwa.PasswordGeneratorTest filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\workspaces\workspaceVemico\IwaTestGae\doc\test\junitreport\raw\TEST-ch.ood.iwa.PasswordGeneratorTest.xml crashfile=C:\workspaces\workspaceVemico\IwaTestGae\junitvmwatcher4495849908673848929.properties propsfile=C:\workspaces\workspaceVemico\IwaTestGae\junit8375190557548747618.properties" />
 
           <property name="ant.file.RunUnitTests" value="C:\workspaces\workspaceVemico\IwaTestGae\scripts\buildJUnitReport.xml" />
-
-          <property name="src.dir.iwa.test" value="C:\workspaces\workspaceVemico\IwaTestGae\unittest" />
 
           <property name="osgi.requiredJavaVersion" value="1.5" />
 
@@ -254,7 +254,7 @@
 
       </properties>
 
-      <testcase classname="ch.ood.iwa.PasswordGeneratorTest" name="testPasswordLength" time="0.0030" />
+      <testcase classname="ch.ood.iwa.PasswordGeneratorTest" name="testPasswordLength" time="0.0020" />
 
       <testcase classname="ch.ood.iwa.PasswordGeneratorTest" name="testPasswordUniqueness" time="0.0" />
 
@@ -263,7 +263,7 @@
       <system-err />
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="W510" id="1" name="TestIwaUtil" package="ch.ood.iwa" tests="4" time="0.086" timestamp="2011-09-18T13:08:19">
+  <testsuite errors="0" failures="0" hostname="W510" id="1" name="TestIwaUtil" package="ch.ood.iwa" tests="4" time="0.075" timestamp="2011-09-18T13:20:56">
       <properties>
           <property name="java.vendor" value="Sun Microsystems Inc." />
 
@@ -290,6 +290,8 @@
           <property name="osgi.ws" value="win32" />
 
           <property name="sun.desktop" value="windows" />
+
+          <property name="src.dir.iwa.test.gae" value="C:\workspaces\workspaceVemico\IwaTestGae\unittest" />
 
           <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
 
@@ -443,11 +445,9 @@
 
           <property name="ant.version" value="Apache Ant version 1.7.1 compiled on June 27 2008" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ch.ood.iwa.TestIwaUtil filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\workspaces\workspaceVemico\IwaTestGae\doc\test\junitreport\raw\TEST-ch.ood.iwa.TestIwaUtil.xml crashfile=C:\workspaces\workspaceVemico\IwaTestGae\junitvmwatcher8203601364690936346.properties propsfile=C:\workspaces\workspaceVemico\IwaTestGae\junit6104096582689424062.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ch.ood.iwa.TestIwaUtil filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\workspaces\workspaceVemico\IwaTestGae\doc\test\junitreport\raw\TEST-ch.ood.iwa.TestIwaUtil.xml crashfile=C:\workspaces\workspaceVemico\IwaTestGae\junitvmwatcher4250222697467281239.properties propsfile=C:\workspaces\workspaceVemico\IwaTestGae\junit4266292471962972968.properties" />
 
           <property name="ant.file.RunUnitTests" value="C:\workspaces\workspaceVemico\IwaTestGae\scripts\buildJUnitReport.xml" />
-
-          <property name="src.dir.iwa.test" value="C:\workspaces\workspaceVemico\IwaTestGae\unittest" />
 
           <property name="osgi.requiredJavaVersion" value="1.5" />
 
@@ -517,11 +517,11 @@
 
       </properties>
 
-      <testcase classname="ch.ood.iwa.TestIwaUtil" name="validEmail" time="0.0090" />
+      <testcase classname="ch.ood.iwa.TestIwaUtil" name="validEmail" time="0.01" />
 
-      <testcase classname="ch.ood.iwa.TestIwaUtil" name="invalidEmail_1" time="0.0" />
+      <testcase classname="ch.ood.iwa.TestIwaUtil" name="invalidEmail_1" time="0.0010" />
 
-      <testcase classname="ch.ood.iwa.TestIwaUtil" name="invalidEmail_2" time="0.0010" />
+      <testcase classname="ch.ood.iwa.TestIwaUtil" name="invalidEmail_2" time="0.0" />
 
       <testcase classname="ch.ood.iwa.TestIwaUtil" name="invalidEmail_3" time="0.0" />
 
@@ -530,7 +530,7 @@
       <system-err />
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="W510" id="2" name="UsersPresenterTest" package="ch.ood.iwa.module.presenter" tests="3" time="0.181" timestamp="2011-09-18T13:08:19">
+  <testsuite errors="0" failures="0" hostname="W510" id="2" name="UsersPresenterTest" package="ch.ood.iwa.module.presenter" tests="3" time="0.178" timestamp="2011-09-18T13:20:56">
       <properties>
           <property name="java.vendor" value="Sun Microsystems Inc." />
 
@@ -557,6 +557,8 @@
           <property name="osgi.ws" value="win32" />
 
           <property name="sun.desktop" value="windows" />
+
+          <property name="src.dir.iwa.test.gae" value="C:\workspaces\workspaceVemico\IwaTestGae\unittest" />
 
           <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
 
@@ -710,11 +712,9 @@
 
           <property name="ant.version" value="Apache Ant version 1.7.1 compiled on June 27 2008" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ch.ood.iwa.module.presenter.UsersPresenterTest filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\workspaces\workspaceVemico\IwaTestGae\doc\test\junitreport\raw\TEST-ch.ood.iwa.module.presenter.UsersPresenterTest.xml crashfile=C:\workspaces\workspaceVemico\IwaTestGae\junitvmwatcher4728974327019905655.properties propsfile=C:\workspaces\workspaceVemico\IwaTestGae\junit1190804415493345584.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ch.ood.iwa.module.presenter.UsersPresenterTest filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\workspaces\workspaceVemico\IwaTestGae\doc\test\junitreport\raw\TEST-ch.ood.iwa.module.presenter.UsersPresenterTest.xml crashfile=C:\workspaces\workspaceVemico\IwaTestGae\junitvmwatcher1005897923290687482.properties propsfile=C:\workspaces\workspaceVemico\IwaTestGae\junit3475457022307683019.properties" />
 
           <property name="ant.file.RunUnitTests" value="C:\workspaces\workspaceVemico\IwaTestGae\scripts\buildJUnitReport.xml" />
-
-          <property name="src.dir.iwa.test" value="C:\workspaces\workspaceVemico\IwaTestGae\unittest" />
 
           <property name="osgi.requiredJavaVersion" value="1.5" />
 
@@ -784,9 +784,9 @@
 
       </properties>
 
-      <testcase classname="ch.ood.iwa.module.presenter.UsersPresenterTest" name="testHandleNewUserButtonClicked" time="0.117" />
+      <testcase classname="ch.ood.iwa.module.presenter.UsersPresenterTest" name="testHandleNewUserButtonClicked" time="0.113" />
 
-      <testcase classname="ch.ood.iwa.module.presenter.UsersPresenterTest" name="testHandleSaveUserButtonClicked" time="0.0020" />
+      <testcase classname="ch.ood.iwa.module.presenter.UsersPresenterTest" name="testHandleSaveUserButtonClicked" time="0.0030" />
 
       <testcase classname="ch.ood.iwa.module.presenter.UsersPresenterTest" name="testDeleteUser" time="0.0020" />
 
@@ -795,7 +795,7 @@
       <system-err />
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="W510" id="3" name="TestIwaEntityModelAgainstGAE" package="ch.ood.iwa.persistence" tests="1" time="1.445" timestamp="2011-09-18T13:08:16">
+  <testsuite errors="0" failures="0" hostname="W510" id="3" name="TestIwaEntityModelAgainstGAE" package="ch.ood.iwa.persistence" tests="1" time="1.448" timestamp="2011-09-18T13:20:53">
       <properties>
           <property name="java.vendor" value="Sun Microsystems Inc." />
 
@@ -822,6 +822,8 @@
           <property name="osgi.ws" value="win32" />
 
           <property name="sun.desktop" value="windows" />
+
+          <property name="src.dir.iwa.test.gae" value="C:\workspaces\workspaceVemico\IwaTestGae\unittest" />
 
           <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
 
@@ -975,11 +977,9 @@
 
           <property name="ant.version" value="Apache Ant version 1.7.1 compiled on June 27 2008" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ch.ood.iwa.persistence.TestIwaEntityModelAgainstGAE filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\workspaces\workspaceVemico\IwaTestGae\doc\test\junitreport\raw\TEST-ch.ood.iwa.persistence.TestIwaEntityModelAgainstGAE.xml crashfile=C:\workspaces\workspaceVemico\IwaTestGae\junitvmwatcher1897818908457437702.properties propsfile=C:\workspaces\workspaceVemico\IwaTestGae\junit1063572960993970245.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ch.ood.iwa.persistence.TestIwaEntityModelAgainstGAE filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\workspaces\workspaceVemico\IwaTestGae\doc\test\junitreport\raw\TEST-ch.ood.iwa.persistence.TestIwaEntityModelAgainstGAE.xml crashfile=C:\workspaces\workspaceVemico\IwaTestGae\junitvmwatcher2071278502971020712.properties propsfile=C:\workspaces\workspaceVemico\IwaTestGae\junit7409651881886393847.properties" />
 
           <property name="ant.file.RunUnitTests" value="C:\workspaces\workspaceVemico\IwaTestGae\scripts\buildJUnitReport.xml" />
-
-          <property name="src.dir.iwa.test" value="C:\workspaces\workspaceVemico\IwaTestGae\unittest" />
 
           <property name="osgi.requiredJavaVersion" value="1.5" />
 
@@ -1049,63 +1049,63 @@
 
       </properties>
 
-      <testcase classname="ch.ood.iwa.persistence.TestIwaEntityModelAgainstGAE" name="testAuthorization" time="0.434" />
+      <testcase classname="ch.ood.iwa.persistence.TestIwaEntityModelAgainstGAE" name="testAuthorization" time="0.414" />
 
       <system-out />
 
-      <system-err><![CDATA[18.09.2011 15:08:17 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+      <system-err><![CDATA[18.09.2011 15:20:54 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
 INFO: Bundle "org.datanucleus.jpa" has an optional dependency to "org.datanucleus.enhancer" but it cannot be resolved
-18.09.2011 15:08:17 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+18.09.2011 15:20:54 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
 INFO: Bundle "org.datanucleus" has an optional dependency to "org.eclipse.equinox.registry" but it cannot be resolved
-18.09.2011 15:08:17 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+18.09.2011 15:20:54 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
 INFO: Bundle "org.datanucleus" has an optional dependency to "org.eclipse.core.runtime" but it cannot be resolved
-18.09.2011 15:08:17 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+18.09.2011 15:20:54 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
 INFO: Bundle "org.datanucleus.jpa" has an optional dependency to "org.datanucleus.enhancer" but it cannot be resolved
-18.09.2011 15:08:17 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+18.09.2011 15:20:54 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
 INFO: Bundle "org.datanucleus" has an optional dependency to "org.eclipse.equinox.registry" but it cannot be resolved
-18.09.2011 15:08:17 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+18.09.2011 15:20:54 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
 INFO: Bundle "org.datanucleus" has an optional dependency to "org.eclipse.core.runtime" but it cannot be resolved
-18.09.2011 15:08:17 org.datanucleus.PersistenceConfiguration setProperty
+18.09.2011 15:20:54 org.datanucleus.PersistenceConfiguration setProperty
 INFO: Property datanucleus.rdbms.sql.allowAllSQLStatements unknown - will be ignored
-18.09.2011 15:08:17 org.datanucleus.PersistenceConfiguration setProperty
+18.09.2011 15:20:54 org.datanucleus.PersistenceConfiguration setProperty
 INFO: Property datanucleus.rdbms.query.containsUsesExistsAlways unknown - will be ignored
-18.09.2011 15:08:17 org.datanucleus.PersistenceConfiguration setProperty
+18.09.2011 15:20:54 org.datanucleus.PersistenceConfiguration setProperty
 INFO: Property datanucleus.rdbms.stringDefaultLength unknown - will be ignored
-18.09.2011 15:08:17 org.datanucleus.PersistenceConfiguration setProperty
+18.09.2011 15:20:54 org.datanucleus.PersistenceConfiguration setProperty
 INFO: Property datanucleus.appengine.ignorableMetaDataBehavior unknown - will be ignored
-18.09.2011 15:08:17 org.datanucleus.PersistenceConfiguration setProperty
+18.09.2011 15:20:54 org.datanucleus.PersistenceConfiguration setProperty
 INFO: Property datanucleus.appengine.storageVersion unknown - will be ignored
-18.09.2011 15:08:17 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
+18.09.2011 15:20:54 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
 INFO: ================= Persistence Configuration ===============
-18.09.2011 15:08:17 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
+18.09.2011 15:20:54 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
 INFO: DataNucleus Persistence Factory - Vendor: "DataNucleus"  Version: "1.1.5"
-18.09.2011 15:08:17 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
+18.09.2011 15:20:54 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
 INFO: DataNucleus Persistence Factory initialised for datastore URL="appengine" driver="" userName=""
-18.09.2011 15:08:17 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
+18.09.2011 15:20:54 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
 INFO: ===========================================================
-18.09.2011 15:08:17 org.datanucleus.PersistenceConfiguration setProperty
+18.09.2011 15:20:54 org.datanucleus.PersistenceConfiguration setProperty
 INFO: Property datanucleus.appengine.autoCreateDatastoreTxns unknown - will be ignored
-18.09.2011 15:08:17 org.datanucleus.PersistenceConfiguration setProperty
+18.09.2011 15:20:54 org.datanucleus.PersistenceConfiguration setProperty
 INFO: Property datanucleus.query.cached unknown - will be ignored
-18.09.2011 15:08:17 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
+18.09.2011 15:20:54 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
 INFO: Class "org.vaadin.appfoundation.persistence.data.AbstractPojo" has been specified with JPA annotations so using those.
-18.09.2011 15:08:17 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
+18.09.2011 15:20:54 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
 INFO: Class "org.vaadin.appfoundation.authorization.jpa.PermissionEntity" has been specified with JPA annotations so using those.
-18.09.2011 15:08:17 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
+18.09.2011 15:20:54 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
 INFO: Class "org.vaadin.appfoundation.authorization.Role" has been specified with JPA annotations so using those.
-18.09.2011 15:08:17 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
+18.09.2011 15:20:54 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
 INFO: Class "org.vaadin.appfoundation.authentication.data.User" has been specified with JPA annotations so using those.
-18.09.2011 15:08:17 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
+18.09.2011 15:20:54 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
 INFO: Class "ch.ood.iwa.authorization.ModulePermission" has been specified with JPA annotations so using those.
-18.09.2011 15:08:18 org.datanucleus.store.appengine.MetaDataValidator validate
+18.09.2011 15:20:55 org.datanucleus.store.appengine.MetaDataValidator validate
 INFO: Performing appengine-specific metadata validation for org.vaadin.appfoundation.authentication.data.User
-18.09.2011 15:08:18 org.datanucleus.store.appengine.MetaDataValidator validate
+18.09.2011 15:20:55 org.datanucleus.store.appengine.MetaDataValidator validate
 INFO: Finished performing appengine-specific metadata validation for org.vaadin.appfoundation.authentication.data.User
-18.09.2011 15:08:18 org.datanucleus.store.StoreDataManager registerStoreData
+18.09.2011 15:20:55 org.datanucleus.store.StoreDataManager registerStoreData
 INFO: Managing Persistence of Class : org.vaadin.appfoundation.persistence.data.AbstractPojo [Table : (none), InheritanceStrategy : subclass-table]
-18.09.2011 15:08:18 org.datanucleus.store.StoreDataManager registerStoreData
+18.09.2011 15:20:55 org.datanucleus.store.StoreDataManager registerStoreData
 INFO: Managing Persistence of Class : org.vaadin.appfoundation.persistence.data.AbstractPojo [Table : (none), InheritanceStrategy : subclass-table]
-18.09.2011 15:08:18 org.datanucleus.store.StoreDataManager registerStoreData
+18.09.2011 15:20:55 org.datanucleus.store.StoreDataManager registerStoreData
 INFO: Managing Persistence of Class : org.vaadin.appfoundation.authentication.data.User [Table : <class name="User"
        identity-type="application"
        objectid-class="javax.jdo.identity.StringIdentity"
@@ -1176,7 +1176,7 @@ INFO: Managing Persistence of Class : org.vaadin.appfoundation.authentication.da
 </field>
 </class>
 , InheritanceStrategy : new-table]
-18.09.2011 15:08:18 org.datanucleus.store.StoreDataManager registerStoreData
+18.09.2011 15:20:55 org.datanucleus.store.StoreDataManager registerStoreData
 INFO: Managing Persistence of Class : org.vaadin.appfoundation.authentication.data.User [Table : <class name="User"
        identity-type="application"
        objectid-class="javax.jdo.identity.StringIdentity"
@@ -1247,11 +1247,11 @@ INFO: Managing Persistence of Class : org.vaadin.appfoundation.authentication.da
 </field>
 </class>
 , InheritanceStrategy : new-table]
-18.09.2011 15:08:18 org.datanucleus.store.appengine.MetaDataValidator validate
+18.09.2011 15:20:55 org.datanucleus.store.appengine.MetaDataValidator validate
 INFO: Performing appengine-specific metadata validation for org.vaadin.appfoundation.authorization.Role
-18.09.2011 15:08:18 org.datanucleus.store.appengine.MetaDataValidator validate
+18.09.2011 15:20:55 org.datanucleus.store.appengine.MetaDataValidator validate
 INFO: Finished performing appengine-specific metadata validation for org.vaadin.appfoundation.authorization.Role
-18.09.2011 15:08:18 org.datanucleus.store.StoreDataManager registerStoreData
+18.09.2011 15:20:55 org.datanucleus.store.StoreDataManager registerStoreData
 INFO: Managing Persistence of Class : org.vaadin.appfoundation.authorization.Role [Table : <class name="Role"
        identity-type="application"
        objectid-class="javax.jdo.identity.StringIdentity"
@@ -1278,7 +1278,7 @@ INFO: Managing Persistence of Class : org.vaadin.appfoundation.authorization.Rol
 </field>
 </class>
 , InheritanceStrategy : new-table]
-18.09.2011 15:08:18 org.datanucleus.store.StoreDataManager registerStoreData
+18.09.2011 15:20:55 org.datanucleus.store.StoreDataManager registerStoreData
 INFO: Managing Persistence of Class : org.vaadin.appfoundation.authorization.Role [Table : <class name="Role"
        identity-type="application"
        objectid-class="javax.jdo.identity.StringIdentity"
@@ -1305,11 +1305,11 @@ INFO: Managing Persistence of Class : org.vaadin.appfoundation.authorization.Rol
 </field>
 </class>
 , InheritanceStrategy : new-table]
-18.09.2011 15:08:18 org.datanucleus.store.appengine.MetaDataValidator validate
+18.09.2011 15:20:55 org.datanucleus.store.appengine.MetaDataValidator validate
 INFO: Performing appengine-specific metadata validation for ch.ood.iwa.authorization.ModulePermission
-18.09.2011 15:08:18 org.datanucleus.store.appengine.MetaDataValidator validate
+18.09.2011 15:20:55 org.datanucleus.store.appengine.MetaDataValidator validate
 INFO: Finished performing appengine-specific metadata validation for ch.ood.iwa.authorization.ModulePermission
-18.09.2011 15:08:18 org.datanucleus.store.StoreDataManager registerStoreData
+18.09.2011 15:20:55 org.datanucleus.store.StoreDataManager registerStoreData
 INFO: Managing Persistence of Class : ch.ood.iwa.authorization.ModulePermission [Table : <class name="ModulePermission"
        identity-type="application"
        objectid-class="javax.jdo.identity.StringIdentity"
@@ -1334,7 +1334,7 @@ INFO: Managing Persistence of Class : ch.ood.iwa.authorization.ModulePermission 
 </field>
 </class>
 , InheritanceStrategy : new-table]
-18.09.2011 15:08:18 org.datanucleus.store.StoreDataManager registerStoreData
+18.09.2011 15:20:55 org.datanucleus.store.StoreDataManager registerStoreData
 INFO: Managing Persistence of Class : ch.ood.iwa.authorization.ModulePermission [Table : <class name="ModulePermission"
        identity-type="application"
        objectid-class="javax.jdo.identity.StringIdentity"
@@ -1362,7 +1362,7 @@ INFO: Managing Persistence of Class : ch.ood.iwa.authorization.ModulePermission 
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="W510" id="4" name="TestIwaEntityModelAgainstMySql" package="ch.ood.iwa.persistence" tests="1" time="2.098" timestamp="2011-09-18T13:08:19">
+  <testsuite errors="0" failures="0" hostname="W510" id="4" name="TestIwaEntityModelAgainstMySql" package="ch.ood.iwa.persistence" tests="1" time="2.26" timestamp="2011-09-18T13:20:56">
       <properties>
           <property name="java.vendor" value="Sun Microsystems Inc." />
 
@@ -1389,6 +1389,8 @@ INFO: Managing Persistence of Class : ch.ood.iwa.authorization.ModulePermission 
           <property name="osgi.ws" value="win32" />
 
           <property name="sun.desktop" value="windows" />
+
+          <property name="src.dir.iwa.test.gae" value="C:\workspaces\workspaceVemico\IwaTestGae\unittest" />
 
           <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
 
@@ -1542,11 +1544,9 @@ INFO: Managing Persistence of Class : ch.ood.iwa.authorization.ModulePermission 
 
           <property name="ant.version" value="Apache Ant version 1.7.1 compiled on June 27 2008" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ch.ood.iwa.persistence.TestIwaEntityModelAgainstMySql filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\workspaces\workspaceVemico\IwaTestGae\doc\test\junitreport\raw\TEST-ch.ood.iwa.persistence.TestIwaEntityModelAgainstMySql.xml crashfile=C:\workspaces\workspaceVemico\IwaTestGae\junitvmwatcher3456154680331313706.properties propsfile=C:\workspaces\workspaceVemico\IwaTestGae\junit3419791586416952483.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ch.ood.iwa.persistence.TestIwaEntityModelAgainstMySql filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\workspaces\workspaceVemico\IwaTestGae\doc\test\junitreport\raw\TEST-ch.ood.iwa.persistence.TestIwaEntityModelAgainstMySql.xml crashfile=C:\workspaces\workspaceVemico\IwaTestGae\junitvmwatcher2156445028324244621.properties propsfile=C:\workspaces\workspaceVemico\IwaTestGae\junit4379291116396618208.properties" />
 
           <property name="ant.file.RunUnitTests" value="C:\workspaces\workspaceVemico\IwaTestGae\scripts\buildJUnitReport.xml" />
-
-          <property name="src.dir.iwa.test" value="C:\workspaces\workspaceVemico\IwaTestGae\unittest" />
 
           <property name="osgi.requiredJavaVersion" value="1.5" />
 
@@ -1616,75 +1616,77 @@ INFO: Managing Persistence of Class : ch.ood.iwa.authorization.ModulePermission 
 
       </properties>
 
-      <testcase classname="ch.ood.iwa.persistence.TestIwaEntityModelAgainstMySql" name="testAuthorization" time="0.67" />
+      <testcase classname="ch.ood.iwa.persistence.TestIwaEntityModelAgainstMySql" name="testAuthorization" time="0.738" />
 
       <system-out />
 
-      <system-err><![CDATA[18.09.2011 15:08:20 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+      <system-err><![CDATA[18.09.2011 15:20:57 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
 INFO: Bundle "org.datanucleus.jpa" has an optional dependency to "org.datanucleus.enhancer" but it cannot be resolved
-18.09.2011 15:08:20 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+18.09.2011 15:20:57 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
 INFO: Bundle "org.datanucleus" has an optional dependency to "org.eclipse.equinox.registry" but it cannot be resolved
-18.09.2011 15:08:20 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+18.09.2011 15:20:57 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
 INFO: Bundle "org.datanucleus" has an optional dependency to "org.eclipse.core.runtime" but it cannot be resolved
-18.09.2011 15:08:20 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+18.09.2011 15:20:57 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
 INFO: Bundle "org.datanucleus.jpa" has an optional dependency to "org.datanucleus.enhancer" but it cannot be resolved
-18.09.2011 15:08:20 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+18.09.2011 15:20:57 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
 INFO: Bundle "org.datanucleus" has an optional dependency to "org.eclipse.equinox.registry" but it cannot be resolved
-18.09.2011 15:08:20 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
+18.09.2011 15:20:57 org.datanucleus.plugin.NonManagedPluginRegistry resolveConstraints
 INFO: Bundle "org.datanucleus" has an optional dependency to "org.eclipse.core.runtime" but it cannot be resolved
-18.09.2011 15:08:20 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
+18.09.2011 15:20:57 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
 INFO: ================= Persistence Configuration ===============
-18.09.2011 15:08:20 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
+18.09.2011 15:20:57 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
 INFO: DataNucleus Persistence Factory - Vendor: "DataNucleus"  Version: "1.1.5"
-18.09.2011 15:08:20 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
+18.09.2011 15:20:57 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
 INFO: DataNucleus Persistence Factory initialised for datastore URL="jdbc:mysql://localhost:3306/iwa" driver="com.mysql.jdbc.Driver" userName="iwa"
-18.09.2011 15:08:20 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
+18.09.2011 15:20:57 org.datanucleus.ObjectManagerFactoryImpl logConfiguration
 INFO: ===========================================================
-18.09.2011 15:08:21 org.datanucleus.store.rdbms.table.AbstractTable create
-INFO: Creating table `DELETEME1316351301041`
-18.09.2011 15:08:21 org.datanucleus.store.rdbms.table.ProbeTable findSchemaDetails
+18.09.2011 15:20:58 org.datanucleus.store.rdbms.table.AbstractTable create
+INFO: Creating table `DELETEME1316352058094`
+18.09.2011 15:20:58 org.datanucleus.store.rdbms.table.ProbeTable findSchemaDetails
 INFO: Schema Name could not be determined for this datastore
-18.09.2011 15:08:21 org.datanucleus.store.rdbms.table.AbstractTable drop
-INFO: Dropping table `DELETEME1316351301041`
-18.09.2011 15:08:21 org.datanucleus.store.rdbms.RDBMSManager initialiseSchema
+18.09.2011 15:20:58 org.datanucleus.store.rdbms.table.AbstractTable drop
+INFO: Dropping table `DELETEME1316352058094`
+18.09.2011 15:20:58 org.datanucleus.store.rdbms.RDBMSManager initialiseSchema
 INFO: Initialising Catalog "iwa", Schema "" using "None" auto-start option
-18.09.2011 15:08:21 org.datanucleus.store.rdbms.RDBMSManager initialiseSchema
+18.09.2011 15:20:58 org.datanucleus.store.rdbms.RDBMSManager initialiseSchema
 INFO: Catalog "iwa", Schema "" initialised - managing 0 classes
-18.09.2011 15:08:21 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
+18.09.2011 15:20:58 org.datanucleus.metadata.xml.AbstractMetaDataHandler error
+WARNUNG: MetaData Parser encountered an error in file "file:/C:/workspaces/workspaceVemico/IwaTestTomcat/WebContent/WEB-INF/classes/META-INF/orm.xml" at line 4, column 117 : cvc-complex-type.3.1: Value '1.0' of attribute 'version' of element 'entity-mappings' is not valid with respect to the corresponding attribute use. Attribute 'version' has a fixed value of '2.0'. - Please check your specification of DTD and the validity of the MetaData XML that you have specified.
+18.09.2011 15:20:58 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
 INFO: Class "org.vaadin.appfoundation.authorization.jpa.PermissionEntity" has been specified with JPA annotations so using those.
-18.09.2011 15:08:21 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
+18.09.2011 15:20:58 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
 INFO: Class "org.vaadin.appfoundation.authorization.Role" has been specified with JPA annotations so using those.
-18.09.2011 15:08:21 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
+18.09.2011 15:20:58 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
 INFO: Class "org.vaadin.appfoundation.authentication.data.User" has been specified with JPA annotations so using those.
-18.09.2011 15:08:21 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
+18.09.2011 15:20:58 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
 INFO: Class "ch.ood.iwa.authorization.ModulePermission" has been specified with JPA annotations so using those.
-18.09.2011 15:08:21 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
+18.09.2011 15:20:58 org.datanucleus.jpa.metadata.JPAAnnotationReader processClassAnnotations
 INFO: Class "org.vaadin.appfoundation.persistence.data.AbstractPojo" has been specified with JPA annotations so using those.
-18.09.2011 15:08:21 org.datanucleus.store.StoreDataManager registerStoreData
+18.09.2011 15:20:58 org.datanucleus.store.StoreDataManager registerStoreData
 INFO: Managing Persistence of Class : org.vaadin.appfoundation.persistence.data.AbstractPojo [Table : (none), InheritanceStrategy : subclass-table]
-18.09.2011 15:08:21 org.datanucleus.store.StoreDataManager registerStoreData
+18.09.2011 15:20:58 org.datanucleus.store.StoreDataManager registerStoreData
 INFO: Managing Persistence of Class : org.vaadin.appfoundation.authentication.data.User [Table : `APPUSER`, InheritanceStrategy : new-table]
-18.09.2011 15:08:21 org.datanucleus.store.rdbms.table.TableImpl validateIndices
+18.09.2011 15:20:58 org.datanucleus.store.rdbms.table.TableImpl validateIndices
 INFO: Validating 2 index(es) for table `APPUSER`
-18.09.2011 15:08:21 org.datanucleus.store.rdbms.table.TableImpl validateForeignKeys
+18.09.2011 15:20:58 org.datanucleus.store.rdbms.table.TableImpl validateForeignKeys
 INFO: Validating 0 foreign key(s) for table `APPUSER`
-18.09.2011 15:08:21 org.datanucleus.store.rdbms.table.TableImpl validateCandidateKeys
+18.09.2011 15:20:58 org.datanucleus.store.rdbms.table.TableImpl validateCandidateKeys
 INFO: Validating 2 unique key(s) for table `APPUSER`
-18.09.2011 15:08:21 org.datanucleus.store.StoreDataManager registerStoreData
+18.09.2011 15:20:58 org.datanucleus.store.StoreDataManager registerStoreData
 INFO: Managing Persistence of Class : org.vaadin.appfoundation.authorization.Role [Table : `ROLE`, InheritanceStrategy : new-table]
-18.09.2011 15:08:21 org.datanucleus.store.rdbms.table.TableImpl validateIndices
+18.09.2011 15:20:58 org.datanucleus.store.rdbms.table.TableImpl validateIndices
 INFO: Validating 2 index(es) for table `ROLE`
-18.09.2011 15:08:21 org.datanucleus.store.rdbms.table.TableImpl validateForeignKeys
+18.09.2011 15:20:58 org.datanucleus.store.rdbms.table.TableImpl validateForeignKeys
 INFO: Validating 1 foreign key(s) for table `ROLE`
-18.09.2011 15:08:21 org.datanucleus.store.rdbms.table.TableImpl validateCandidateKeys
+18.09.2011 15:20:58 org.datanucleus.store.rdbms.table.TableImpl validateCandidateKeys
 INFO: Validating 1 unique key(s) for table `ROLE`
-18.09.2011 15:08:21 org.datanucleus.store.StoreDataManager registerStoreData
+18.09.2011 15:20:58 org.datanucleus.store.StoreDataManager registerStoreData
 INFO: Managing Persistence of Class : ch.ood.iwa.authorization.ModulePermission [Table : `MODULEPERMISSION`, InheritanceStrategy : new-table]
-18.09.2011 15:08:21 org.datanucleus.store.rdbms.table.TableImpl validateIndices
+18.09.2011 15:20:58 org.datanucleus.store.rdbms.table.TableImpl validateIndices
 INFO: Validating 1 index(es) for table `MODULEPERMISSION`
-18.09.2011 15:08:21 org.datanucleus.store.rdbms.table.TableImpl validateForeignKeys
+18.09.2011 15:20:58 org.datanucleus.store.rdbms.table.TableImpl validateForeignKeys
 INFO: Validating 0 foreign key(s) for table `MODULEPERMISSION`
-18.09.2011 15:08:21 org.datanucleus.store.rdbms.table.TableImpl validateCandidateKeys
+18.09.2011 15:20:59 org.datanucleus.store.rdbms.table.TableImpl validateCandidateKeys
 INFO: Validating 1 unique key(s) for table `MODULEPERMISSION`
 ]]></system-err>
 
