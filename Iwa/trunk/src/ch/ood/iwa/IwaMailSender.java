@@ -44,19 +44,22 @@ public class IwaMailSender implements Serializable {
 	public static void send(String receiverEmail, String receiverName, String subject,
 			String content) throws Exception {
 		Session session = getMailSession();
+		String encodingOptions = "text/plain; charset=UTF-8";
 
 		String senderMail = IwaApplication.getInstance().getProperties()
 				.getProperty(SENDER_MAIL_KEY);
 		String senderName = IwaApplication.getInstance().getProperties()
 				.getProperty(SENDER_NAME_KEY);
 
-		Message msg = new MimeMessage(session);
+		MimeMessage msg = new MimeMessage(session);
+		msg.setHeader("Content-Type", encodingOptions);
+		
 		IwaApplication.getInstance().log(null, null, " *** Sending Mail from " + senderName + "(" + senderMail + ")");
 		IwaApplication.getInstance().log(null, null, " *** Sending Mail to " + receiverName + "(" + receiverEmail + ")");
 		msg.setFrom(new InternetAddress(senderMail, senderName));
 		msg.addRecipient(Message.RecipientType.TO, new InternetAddress(receiverEmail, receiverName));
-		msg.setSubject(subject);
-		msg.setText(content);
+		msg.setSubject(subject, "UTF-8");
+		msg.setText(content, "UTF-8");
 		
 		Transport.send(msg);
 	}
