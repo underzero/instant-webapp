@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+        http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">
+
+	<persistence-unit name="default">
+		<mapping-file>META-INF/orm.xml</mapping-file>		
+		<jar-file>../lib/iwa.jar</jar-file>		
+		<class>org.vaadin.appfoundation.persistence.data.AbstractPojo</class>
+		<class>org.vaadin.appfoundation.authorization.jpa.PermissionEntity</class>
+		<class>org.vaadin.appfoundation.authentication.data.User</class>
+		<class>org.vaadin.appfoundation.authorization.Role</class>
+		<class>ch.ood.iwa.authorization.ModulePermission</class>		
+		<properties>
+			<property name="datanucleus.ConnectionDriverName" value="com.mysql.jdbc.Driver" />
+			<property name="datanucleus.ConnectionURL" value="jdbc:mysql://localhost:3306/iwa" />
+			<property name="datanucleus.ConnectionUserName" value="iwa" />
+			<property name="datanucleus.ConnectionPassword" value="iwa" />
+			<property name="datanucleus.autoCreateSchema" value="true" />
+			<property name="datanucleus.validateTables" value="false" />
+			<property name="datanucleus.validateConstraints" value="false" />
+			<property name="datanucleus.cache.level2.type " value="none"/>
+			<property name="datanucleus.Optimistic" value="false"/>			
+		</properties>
+	</persistence-unit>
+
+</persistence>
