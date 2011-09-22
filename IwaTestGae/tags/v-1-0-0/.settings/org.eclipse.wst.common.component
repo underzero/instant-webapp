@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="IwaTestGae">
+        <wb-resource deploy-path="/" source-path="/war"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/unittest"/>
+        <property name="context-root" value="IwaTestGae"/>
+        <property name="java-output-path" value="/IwaTestGae/war/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>

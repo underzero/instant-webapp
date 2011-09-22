@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="W510" name="ch.ood.iwa.module.presenter.UsersPresenterTest" tests="3" time="0.178" timestamp="2011-09-18T13:20:56">
+  <properties>
+    <property name="java.vendor" value="Sun Microsystems Inc."></property>
+    <property name="osgi.bundles.defaultStartLevel" value="4"></property>
+    <property name="org.eclipse.debug.ui.breakpoints.toggleFactoriesUsed" value="false"></property>
+    <property name="sun.java.launcher" value="SUN_STANDARD"></property>
+    <property name="eclipse.pdebuild.templates" value="/C:/Programs/eclipse-jee-helios-SR2-win32-x86_64/plugins/org.eclipse.pde.build_3.6.2.R36x_20110203/templates/"></property>
+    <property name="org.osgi.supports.framework.extension" value="true"></property>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"></property>
+    <property name="eclipse.p2.profile" value="epp.package.jee"></property>
+    <property name="os.name" value="Windows 7"></property>
+    <property name="sun.boot.class.path" value="C:\Programs\Java\jdk1.6.0_25\jre\lib\resources.jar;C:\Programs\Java\jdk1.6.0_25\jre\lib\rt.jar;C:\Programs\Java\jdk1.6.0_25\jre\lib\sunrsasign.jar;C:\Programs\Java\jdk1.6.0_25\jre\lib\jsse.jar;C:\Programs\Java\jdk1.6.0_25\jre\lib\jce.jar;C:\Programs\Java\jdk1.6.0_25\jre\lib\charsets.jar;C:\Programs\Java\jdk1.6.0_25\jre\lib\modules\jdk.boot.jar;C:\Programs\Java\jdk1.6.0_25\jre\classes"></property>
+    <property name="eclipse.running" value="true"></property>
+    <property name="osgi.ws" value="win32"></property>
+    <property name="sun.desktop" value="windows"></property>
+    <property name="src.dir.iwa.test.gae" value="C:\workspaces\workspaceVemico\IwaTestGae\unittest"></property>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."></property>
+    <property name="ant.home" value="C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins\org.apache.ant_1.7.1.v20100518-1145"></property>
+    <property name="java.runtime.version" value="1.6.0_25-b06"></property>
+    <property name="osgi.instance.area" value="file:/C:/workspaces/workspaceVemico/"></property>
+    <property name="user.name" value="Mischa"></property>
+    <property name="osgi.framework.extensions" value=""></property>
+    <property name="org.osgi.framework.system.packages" value="javax.accessibility,javax.activation,javax.activity,javax.annotation,javax.annotation.processing,javax.crypto,javax.crypto.interfaces,javax.crypto.spec,javax.imageio,javax.imageio.event,javax.imageio.metadata,javax.imageio.plugins.bmp,javax.imageio.plugins.jpeg,javax.imageio.spi,javax.imageio.stream,javax.jws,javax.jws.soap,javax.lang.model,javax.lang.model.element,javax.lang.model.type,javax.lang.model.util,javax.management,javax.management.loading,javax.management.modelmbean,javax.management.monitor,javax.management.openmbean,javax.management.relation,javax.management.remote,javax.management.remote.rmi,javax.management.timer,javax.naming,javax.naming.directory,javax.naming.event,javax.naming.ldap,javax.naming.spi,javax.net,javax.net.ssl,javax.print,javax.print.attribute,javax.print.attribute.standard,javax.print.event,javax.rmi,javax.rmi.CORBA,javax.rmi.ssl,javax.script,javax.security.auth,javax.security.auth.callback,javax.security.auth.kerberos,javax.security.auth.login,javax.security.auth.spi,javax.security.auth.x500,javax.security.cert,javax.security.sasl,javax.sound.midi,javax.sound.midi.spi,javax.sound.sampled,javax.sound.sampled.spi,javax.sql,javax.sql.rowset,javax.sql.rowset.serial,javax.sql.rowset.spi,javax.swing,javax.swing.border,javax.swing.colorchooser,javax.swing.event,javax.swing.filechooser,javax.swing.plaf,javax.swing.plaf.basic,javax.swing.plaf.metal,javax.swing.plaf.multi,javax.swing.plaf.synth,javax.swing.table,javax.swing.text,javax.swing.text.html,javax.swing.text.html.parser,javax.swing.text.rtf,javax.swing.tree,javax.swing.undo,javax.tools,javax.transaction,javax.transaction.xa,javax.xml,javax.xml.bind,javax.xml.bind.annotation,javax.xml.bind.annotation.adapters,javax.xml.bind.attachment,javax.xml.bind.helpers,javax.xml.bind.util,javax.xml.crypto,javax.xml.crypto.dom,javax.xml.crypto.dsig,javax.xml.crypto.dsig.dom,javax.xml.crypto.dsig.keyinfo,javax.xml.crypto.dsig.spec,javax.xml.datatype,javax.xml.namespace,javax.xml.parsers,javax.xml.soap,javax.xml.stream,javax.xml.stream.events,javax.xml.stream.util,javax.xml.transform,javax.xml.transform.dom,javax.xml.transform.sax,javax.xml.transform.stax,javax.xml.transform.stream,javax.xml.validation,javax.xml.ws,javax.xml.ws.handler,javax.xml.ws.handler.soap,javax.xml.ws.http,javax.xml.ws.soap,javax.xml.ws.spi,javax.xml.ws.wsaddressing,javax.xml.xpath,org.ietf.jgss,org.omg.CORBA,org.omg.CORBA_2_3,org.omg.CORBA_2_3.portable,org.omg.CORBA.DynAnyPackage,org.omg.CORBA.ORBPackage,org.omg.CORBA.portable,org.omg.CORBA.TypeCodePackage,org.omg.CosNaming,org.omg.CosNaming.NamingContextExtPackage,org.omg.CosNaming.NamingContextPackage,org.omg.Dynamic,org.omg.DynamicAny,org.omg.DynamicAny.DynAnyFactoryPackage,org.omg.DynamicAny.DynAnyPackage,org.omg.IOP,org.omg.IOP.CodecFactoryPackage,org.omg.IOP.CodecPackage,org.omg.Messaging,org.omg.PortableInterceptor,org.omg.PortableInterceptor.ORBInitInfoPackage,org.omg.PortableServer,org.omg.PortableServer.CurrentPackage,org.omg.PortableServer.POAManagerPackage,org.omg.PortableServer.POAPackage,org.omg.PortableServer.portable,org.omg.PortableServer.ServantLocatorPackage,org.omg.SendingContext,org.omg.stub.java.rmi,org.w3c.dom,org.w3c.dom.bootstrap,org.w3c.dom.css,org.w3c.dom.events,org.w3c.dom.html,org.w3c.dom.ls,org.w3c.dom.ranges,org.w3c.dom.stylesheets,org.w3c.dom.traversal,org.w3c.dom.views,org.w3c.dom.xpath,org.xml.sax,org.xml.sax.ext,org.xml.sax.helpers"></property>
+    <property name="eclipse.launcher" value="C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\eclipse.exe"></property>
+    <property name="eclipse.launcher.name" value="Eclipse"></property>
+    <property name="equinox.use.ds" value="true"></property>
+    <property name="org.osgi.framework.language" value="de"></property>
+    <property name="user.language" value="de"></property>
+    <property name="org.osgi.framework.processor" value="x86-64"></property>
+    <property name="osgi.syspath" value="c:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins"></property>
+    <property name="test.report.dir" value="C:\workspaces\workspaceVemico\IwaTestGae\doc\test\junitreport"></property>
+    <property name="sun.boot.library.path" value="C:\Programs\Java\jdk1.6.0_25\jre\bin"></property>
+    <property name="osgi.manifest.cache" value="C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\configuration\org.eclipse.osgi\manifests"></property>
+    <property name="ant.project.name" value="RunUnitTests"></property>
+    <property name="java.version" value="1.6.0_25"></property>
+    <property name="org.osgi.framework.os.name" value="Windows7"></property>
+    <property name="user.timezone" value=""></property>
+    <property name="sun.arch.data.model" value="64"></property>
+    <property name="osgi.bundles" value="reference:file:org.eclipse.equinox.simpleconfigurator_1.0.200.v20100503.jar@1:start"></property>
+    <property name="java.endorsed.dirs" value="C:\Programs\Java\jdk1.6.0_25\jre\lib\endorsed"></property>
+    <property name="osgi.tracefile" value="C:\workspaces\workspaceVemico\.metadata\trace.log"></property>
+    <property name="sun.cpu.isalist" value="amd64"></property>
+    <property name="sun.jnu.encoding" value="Cp1252"></property>
+    <property name="eclipse.application" value="org.eclipse.ui.ide.workbench"></property>
+    <property name="file.encoding.pkg" value="sun.io"></property>
+    <property name="org.osgi.framework.vendor" value="Eclipse"></property>
+    <property name="file.separator" value="\"></property>
+    <property name="java.specification.name" value="Java Platform API Specification"></property>
+    <property name="src.dir.iwa.test.tomcat" value="C:\workspaces\workspaceVemico\IwaTestTomcat\unittest"></property>
+    <property name="java.class.version" value="50.0"></property>
+    <property name="user.country" value="CH"></property>
+    <property name="org.eclipse.equinox.launcher.splash.location" value="c:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins\org.eclipse.platform_3.6.2.v201102101200\splash.bmp"></property>
+    <property name="java.home" value="C:\Programs\Java\jdk1.6.0_25\jre"></property>
+    <property name="osgi.os" value="win32"></property>
+    <property name="eclipse.commands" value="-os
+win32
+-ws
+win32
+-arch
+x86_64
+-showsplash
+-launcher
+C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\eclipse.exe
+-name
+Eclipse
+--launcher.library
+C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\\plugins/org.eclipse.equinox.launcher.win32.win32.x86_64_1.1.2.R36x_v20101222\eclipse_1312.dll
+-startup
+C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\\plugins/org.eclipse.equinox.launcher_1.1.1.R36x_v20101122_1400.jar
+-exitdata
+146c_5c
+-product
+org.eclipse.epp.package.jee.product
+-vm
+C:/Programs/Java/jdk1.6.0_25/bin/javaw.exe
+"></property>
+    <property name="java.vm.info" value="mixed mode"></property>
+    <property name="osgi.splashLocation" value="c:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins\org.eclipse.platform_3.6.2.v201102101200\splash.bmp"></property>
+    <property name="ant.file" value="C:\workspaces\workspaceVemico\IwaTestGae\scripts\buildJUnitReport.xml"></property>
+    <property name="os.version" value="6.1"></property>
+    <property name="osgi.arch" value="x86_64"></property>
+    <property name="path.separator" value=";"></property>
+    <property name="eclipse.home" value="C:\Programs\eclipse-jee-helios-SR2-win32-x86_64"></property>
+    <property name="java.vm.version" value="20.0-b11"></property>
+    <property name="org.osgi.supports.framework.fragment" value="true"></property>
+    <property name="user.variant" value=""></property>
+    <property name="ant.library.dir" value="C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins\org.apache.ant_1.7.1.v20100518-1145\lib"></property>
+    <property name="osgi.framework.shape" value="jar"></property>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"></property>
+    <property name="osgi.instance.area.default" value="file:/C:/Users/Mischa/workspace/"></property>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"></property>
+    <property name="org.osgi.framework.version" value="1.5.0"></property>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"></property>
+    <property name="gwt.persistentunitcache" value="false"></property>
+    <property name="eclipse.pdebuild.scripts" value="/C:/Programs/eclipse-jee-helios-SR2-win32-x86_64/plugins/org.eclipse.pde.build_3.6.2.R36x_20110203/scripts/"></property>
+    <property name="osgi.install.area" value="file:/C:/Programs/eclipse-jee-helios-SR2-win32-x86_64/"></property>
+    <property name="osgi.framework" value="file:/c:/Programs/eclipse-jee-helios-SR2-win32-x86_64/plugins/org.eclipse.osgi_3.6.2.R36x_v20110210.jar"></property>
+    <property name="user.home" value="C:\Users\Mischa"></property>
+    <property name="org.eclipse.equinox.simpleconfigurator.configUrl" value="file:org.eclipse.equinox.simpleconfigurator/bundles.info"></property>
+    <property name="osgi.splashPath" value="platform:/base/plugins/org.eclipse.platform"></property>
+    <property name="osgi.bundlestore" value="C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\configuration\org.eclipse.osgi\bundles"></property>
+    <property name="osgi.nl" value="de_CH"></property>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."></property>
+    <property name="java.vendor.url" value="http://java.sun.com/"></property>
+    <property name="java.library.path" value="C:\Programs\Java\jdk1.6.0_25\jre\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\ThinkPad\Bluetooth Software\;C:\Program Files\ThinkPad\Bluetooth Software\syswow64;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Common Files\Lenovo;C:\Program Files (x86)\Lenovo\Access Connections\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Common Files\Lenovo;C:\Program Files (x86)\Lenovo\Client Security Solution;C:\Program Files\Lenovo\Client Security Solution;C:\Programs\Tomcat6\bin;C:\Program Files\MySQL\MySQL Server 5.5\bin;C:\Programs\TortoiseSVN\bin;C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins\com.google.appengine.eclipse.sdkbundle_1.5.2.r36v201107211953\appengine-java-sdk-1.5.2\bin;C:\Google\google_appengine\"></property>
+    <property name="eclipse.p2.data.area" value="@config.dir/../p2/"></property>
+    <property name="eclipse.startTime" value="1316260149691"></property>
+    <property name="org.osgi.framework.os.version" value="6.1.0"></property>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."></property>
+    <property name="src.dir.iwa" value="C:\workspaces\workspaceVemico\Iwa\unittest"></property>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"></property>
+    <property name="java.class.path" value="C:\workspaces\workspaceVemico\IwaTestGae\lib-dev\junit-4.8.1.jar;C:\workspaces\workspaceVemico\Iwa\lib-dev\easymock-2.5.2.jar;C:\workspaces\workspaceVemico\IwaTestGae\war\WEB-INF\lib\appengine-api-1.0-sdk-1.5.2.jar;C:\workspaces\workspaceVemico\IwaTestGae\war\WEB-INF\lib\appengine-api-labs-1.5.2.jar;C:\workspaces\workspaceVemico\IwaTestGae\war\WEB-INF\lib\appengine-jsr107cache-1.5.2.jar;C:\workspaces\workspaceVemico\IwaTestGae\war\WEB-INF\lib\confirmdialog-1.1.1.jar;C:\workspaces\workspaceVemico\IwaTestGae\war\WEB-INF\lib\datanucleus-appengine-1.0.9.final.jar;C:\workspaces\workspaceVemico\IwaTestGae\war\WEB-INF\lib\datanucleus-core-1.1.5.jar;C:\workspaces\workspaceVemico\IwaTestGae\war\WEB-INF\lib\datanucleus-jpa-1.1.5.jar;C:\workspaces\workspaceVemico\IwaTestGae\war\WEB-INF\lib\geronimo-jpa_3.0_spec-1.1.1.jar;C:\workspaces\workspaceVemico\IwaTestGae\war\WEB-INF\lib\geronimo-jta_1.1_spec-1.1.1.jar;C:\workspaces\workspaceVemico\IwaTestGae\war\WEB-INF\lib\iwa.jar;C:\workspaces\workspaceVemico\IwaTestGae\war\WEB-INF\lib\jdo2-api-2.3-eb.jar;C:\workspaces\workspaceVemico\IwaTestGae\war\WEB-INF\lib\jsr107cache-1.1.jar;C:\workspaces\workspaceVemico\IwaTestGae\war\WEB-INF\lib\vaadin-6.6.0.jar;C:\workspaces\workspaceVemico\IwaTestGae\war\WEB-INF\lib\xom-1.2.6.jar;C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins\com.google.appengine.eclipse.sdkbundle_1.5.2.r36v201107211953\appengine-java-sdk-1.5.2\lib\user\orm\jdo2-api-2.3-eb.jar;C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins\com.google.appengine.eclipse.sdkbundle_1.5.2.r36v201107211953\appengine-java-sdk-1.5.2\lib\impl\agent\appengine-agentruntime.jar;C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins\com.google.appengine.eclipse.sdkbundle_1.5.2.r36v201107211953\appengine-java-sdk-1.5.2\lib\impl\appengine-api-labs.jar;C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins\com.google.appengine.eclipse.sdkbundle_1.5.2.r36v201107211953\appengine-java-sdk-1.5.2\lib\impl\appengine-api-stubs.jar;C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins\com.google.appengine.eclipse.sdkbundle_1.5.2.r36v201107211953\appengine-java-sdk-1.5.2\lib\impl\appengine-api.jar;C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins\com.google.appengine.eclipse.sdkbundle_1.5.2.r36v201107211953\appengine-java-sdk-1.5.2\lib\impl\appengine-local-runtime.jar;C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins\com.google.appengine.eclipse.sdkbundle_1.5.2.r36v201107211953\appengine-java-sdk-1.5.2\lib\testing\appengine-testing.jar;C:\workspaces\workspaceVemico\Iwa\war\WEB-INF\classes;C:\workspaces\workspaceVemico\IwaTestGae\war\WEB-INF\classes;C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins\org.apache.ant_1.7.1.v20100518-1145\lib\ant-launcher.jar;C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins\org.apache.ant_1.7.1.v20100518-1145\lib\ant.jar;C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins\org.apache.ant_1.7.1.v20100518-1145\lib\ant-junit.jar"></property>
+    <property name="ant.version" value="Apache Ant version 1.7.1 compiled on June 27 2008"></property>
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner ch.ood.iwa.module.presenter.UsersPresenterTest filtertrace=true haltOnError=false haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\workspaces\workspaceVemico\IwaTestGae\doc\test\junitreport\raw\TEST-ch.ood.iwa.module.presenter.UsersPresenterTest.xml crashfile=C:\workspaces\workspaceVemico\IwaTestGae\junitvmwatcher1005897923290687482.properties propsfile=C:\workspaces\workspaceVemico\IwaTestGae\junit3475457022307683019.properties"></property>
+    <property name="ant.file.RunUnitTests" value="C:\workspaces\workspaceVemico\IwaTestGae\scripts\buildJUnitReport.xml"></property>
+    <property name="osgi.requiredJavaVersion" value="1.5"></property>
+    <property name="org.eclipse.update.reconcile" value="false"></property>
+    <property name="eclipse.vm" value="C:/Programs/Java/jdk1.6.0_25/bin/javaw.exe"></property>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"></property>
+    <property name="java.vm.specification.version" value="1.0"></property>
+    <property name="sun.os.patch.level" value="Service Pack 1"></property>
+    <property name="sun.cpu.endian" value="little"></property>
+    <property name="java.io.tmpdir" value="C:\Users\Mischa\AppData\Local\Temp\"></property>
+    <property name="eclipse.pdebuild.home" value="/C:/Programs/eclipse-jee-helios-SR2-win32-x86_64/plugins/org.eclipse.pde.build_3.6.2.R36x_20110203/./"></property>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"></property>
+    <property name="eclipse.product" value="org.eclipse.epp.package.jee.product"></property>
+    <property name="eclipse.home.location" value="file:/C:/Programs/eclipse-jee-helios-SR2-win32-x86_64/"></property>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"></property>
+    <property name="os.arch" value="amd64"></property>
+    <property name="java.ext.dirs" value="C:\Programs\Java\jdk1.6.0_25\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"></property>
+    <property name="user.dir" value="C:\Programs\eclipse-jee-helios-SR2-win32-x86_64"></property>
+    <property name="org.osgi.supports.framework.requirebundle" value="true"></property>
+    <property name="line.separator" value="
+"></property>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"></property>
+    <property name="org.apache.commons.logging.Log" value="org.apache.commons.logging.impl.NoOpLog"></property>
+    <property name="basedir" value="C:\workspaces\workspaceVemico\IwaTestGae"></property>
+    <property name="ant.java.version" value="1.6"></property>
+    <property name="ant.core.lib" value="C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\plugins\org.apache.ant_1.7.1.v20100518-1145\lib\ant.jar"></property>
+    <property name="file.encoding" value="Cp1252"></property>
+    <property name="osgi.framework.version" value="3.6.2.R36x_v20110210"></property>
+    <property name="__wbp.gwt.useWebKit" value="true"></property>
+    <property name="eclipse.buildId" value="M20110210-1200"></property>
+    <property name="eclipse.vmargs" value="-Dosgi.requiredJavaVersion=1.5
+-Xms256m
+-Xmx2056m
+-XX:MaxPermSize=256M
+-jar
+C:\Programs\eclipse-jee-helios-SR2-win32-x86_64\\plugins/org.eclipse.equinox.launcher_1.1.1.R36x_v20101122_1400.jar
+"></property>
+    <property name="java.specification.version" value="1.6"></property>
+    <property name="osgi.user.area" value="file:/C:/Users/Mischa/user/"></property>
+    <property name="org.osgi.framework.executionenvironment" value="OSGi/Minimum-1.0,OSGi/Minimum-1.1,OSGi/Minimum-1.2,JRE-1.1,J2SE-1.2,J2SE-1.3,J2SE-1.4,J2SE-1.5,JavaSE-1.6"></property>
+    <property name="osgi.logfile" value="C:\workspaces\workspaceVemico\.metadata\.log"></property>
+    <property name="osgi.configuration.area" value="file:/C:/Programs/eclipse-jee-helios-SR2-win32-x86_64/configuration/"></property>
+  </properties>
+  <testcase classname="ch.ood.iwa.module.presenter.UsersPresenterTest" name="testHandleNewUserButtonClicked" time="0.113"></testcase>
+  <testcase classname="ch.ood.iwa.module.presenter.UsersPresenterTest" name="testHandleSaveUserButtonClicked" time="0.0030"></testcase>
+  <testcase classname="ch.ood.iwa.module.presenter.UsersPresenterTest" name="testDeleteUser" time="0.0020"></testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
