@@ -129,9 +129,9 @@ protected void initializeFullScreenViews() {
 }
 }}}
 
-You can then navigate via hash and the URL you have given to the view, for example http://localhost:7777#FullScreenSampleView.
+You can then navigate via hash and the URL you have given to the view, for example http://localhost:7777#FullScreenSampleView (of course this link only works if it runs on your local machine).
 
-Please note that this works on some browser rather instable, so you might also want to make the view reachable by http parameter. to achieve this, write in your application something like:
+Please note that this works on some browser rather instable, so you might also want to make the view reachable by http parameter (for example http://localhost:7777/?FullScreenSampleView, note the exclamation mark ? instead of the hash sign #). To achieve this, write in your application something like:
 {{{
 @Override
 protected void handleParametersByApplication(Map<String, String[]> parameters) {
