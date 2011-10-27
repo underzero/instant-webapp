@@ -14,7 +14,7 @@ Once the application is running, you can log in using the user "r" with the pass
 
 ==Preconditions for Google App Engine==
  * Install Eclipse (Java EE Version)
- * Install Google Plugin (Eclipse Helios Update Site: http://dl.google.com/eclipse/plugin/3.6)
+ * Install Google Plugin (Eclipse Update Site: http://code.google.com/intl/de-CH/eclipse/docs/getting_started.html#installing)
  * Install Vaadin Plugin (Eclipse Update Site: http://vaadin.com/eclipse)
 
 ==Preconditions for Apache Tomcat (and MySQL)==
